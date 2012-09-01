@@ -1,0 +1,1 @@
+﻿#从[pala](https://github.com/pala/pala.github.com)那里拿来的,略修改.

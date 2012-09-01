@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://muou.tk/sitemap.xml

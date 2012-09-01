@@ -1,0 +1,13 @@
+markdown: rdiscount 
+permalink: /:title 
+title: 木偶的天空
+url: http://muou.tk
+subscribe: http://feeds.feedburner.com/weizhenye
+exclude: [ README.md, newpost.rb ]
+domain: muou.tk
+author: weizhenye
+email: weizhenye@gmail.com
+auto: true
+twitterID: weizhenye
+googleAnalyticsID: UA-34447075-1
+disqusShortname: muou
