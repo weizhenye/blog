@@ -6,6 +6,7 @@ tags:
     - 
 categories:
     - 
+published: true
 ---
 
 折腾了几天终于搭建好博客了,其间遇到了各种各样莫名其妙的问题,做个记录.
