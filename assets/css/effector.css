@@ -24,12 +24,10 @@ a:hover, a:active {
     outline: 0;
 }
 img {
-    max-width: 600px;
+    max-width: 640px;
     height: auto;
     border: 0;
     -ms-interpolation-mode: bicubic;
-    margin-left: -20px;
-    margin-right: -20px;
 }
 .wrapper p img {
     clear: both;
