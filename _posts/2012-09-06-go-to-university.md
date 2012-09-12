@@ -6,6 +6,7 @@ tags:
     - 
 categories:
     - 个人
+    - 图片
 published: true
 ---
 
