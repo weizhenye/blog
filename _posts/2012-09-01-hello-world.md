@@ -5,7 +5,7 @@ layout: post
 tags:
     - 
 categories:
-    - 
+    - 个人,电脑
 published: true
 ---
 
