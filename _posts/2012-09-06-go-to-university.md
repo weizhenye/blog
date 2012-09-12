@@ -1,12 +1,12 @@
 ---
 date: 2012-09-02 21:48:00
-title: LOGO撞车记
+title: Go To University
 layout: post
 tags:
     - 
 categories:
     - 个人
-published: true
+published: false
 ---
 
 4日刚拿到驾驶证,5日早上便由我开车去火车站.估计这是寒假之前最后一次碰方向盘了.先坐动车到宁波东站.动车的两头都可以开,但印象中作为永远是朝前的.后来才知道原来座位是可以360度转的,到终点站后列车员会把座位一个个转过来.
