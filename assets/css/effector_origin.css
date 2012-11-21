@@ -15,18 +15,13 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
 }
-a
-{
-    text-decoration: none;
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
 }
-a:link,a:after
-{
-    color: purple;
-}
-a:hover,a:focus
-{
-    color: yellow;
-    background: purple;
+a:hover, a:active {
+    outline: 0;
 }
 img {
     max-width: 640px;
@@ -47,6 +42,14 @@ body {
     font-size: 15px;
     line-height: 30px;
     color: #555;
+}
+a {
+    color: #F95B1F;
+    text-decoration: none;
+}
+a:hover {
+    color: #A33B14;
+    text-decoration: none;
 }
 a.label:hover {
     color: #fff;
