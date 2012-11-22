@@ -20,106 +20,106 @@
 
 !function( $ ){
 
-  "use strict"
+	"use strict"
 
  /* TAB CLASS DEFINITION
-  * ==================== */
+	* ==================== */
 
-  var Tab = function ( element ) {
-    this.element = $(element)
-  }
+	var Tab = function ( element ) {
+		this.element = $(element)
+	}
 
-  Tab.prototype = {
+	Tab.prototype = {
 
-    constructor: Tab
+		constructor: Tab
 
-  , show: function () {
-      var $this = this.element
-        , $ul = $this.closest('ul:not(.dropdown-menu)')
-        , href = $this.attr('data-target') || $this.attr('href')
-        , previous
-        , $href
+	, show: function () {
+			var $this = this.element
+				, $ul = $this.closest('ul:not(.dropdown-menu)')
+				, href = $this.attr('data-target') || $this.attr('href')
+				, previous
+				, $href
 
-      if ( $this.parent('li').hasClass('active') ) return
+			if ( $this.parent('li').hasClass('active') ) return
 
-      previous = $ul.find('.active a').last()[0]
+			previous = $ul.find('.active a').last()[0]
 
-      $this.trigger({
-        type: 'show'
-      , relatedTarget: previous
-      })
+			$this.trigger({
+				type: 'show'
+			, relatedTarget: previous
+			})
 
-      $href = $(href)
+			$href = $(href)
 
-      this.activate($this.parent('li'), $ul)
-      this.activate($href, $href.parent(), function () {
-        $this.trigger({
-          type: 'shown'
-        , relatedTarget: previous
-        })
-      })
-    }
+			this.activate($this.parent('li'), $ul)
+			this.activate($href, $href.parent(), function () {
+				$this.trigger({
+					type: 'shown'
+				, relatedTarget: previous
+				})
+			})
+		}
 
-  , activate: function ( element, container, callback) {
-      var $active = container.find('> .active')
-        , transition = callback
-            && $.support.transition
-            && $active.hasClass('fade')
+	, activate: function ( element, container, callback) {
+			var $active = container.find('> .active')
+				, transition = callback
+						&& $.support.transition
+						&& $active.hasClass('fade')
 
-      function next() {
-        $active
-          .removeClass('active')
-          .find('> .dropdown-menu > .active')
-          .removeClass('active')
+			function next() {
+				$active
+					.removeClass('active')
+					.find('> .dropdown-menu > .active')
+					.removeClass('active')
 
-        element.addClass('active')
+				element.addClass('active')
 
-        if (transition) {
-          element[0].offsetWidth // reflow for transition
-          element.addClass('in')
-        } else {
-          element.removeClass('fade')
-        }
+				if (transition) {
+					element[0].offsetWidth // reflow for transition
+					element.addClass('in')
+				} else {
+					element.removeClass('fade')
+				}
 
-        if ( element.parent('.dropdown-menu') ) {
-          element.closest('li.dropdown').addClass('active')
-        }
+				if ( element.parent('.dropdown-menu') ) {
+					element.closest('li.dropdown').addClass('active')
+				}
 
-        callback && callback()
-      }
+				callback && callback()
+			}
 
-      transition ?
-        $active.one($.support.transition.end, next) :
-        next()
+			transition ?
+				$active.one($.support.transition.end, next) :
+				next()
 
-      $active.removeClass('in')
-    }
-  }
+			$active.removeClass('in')
+		}
+	}
 
 
  /* TAB PLUGIN DEFINITION
-  * ===================== */
+	* ===================== */
 
-  $.fn.tab = function ( option ) {
-    return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('tab')
-      if (!data) $this.data('tab', (data = new Tab(this)))
-      if (typeof option == 'string') data[option]()
-    })
-  }
+	$.fn.tab = function ( option ) {
+		return this.each(function () {
+			var $this = $(this)
+				, data = $this.data('tab')
+			if (!data) $this.data('tab', (data = new Tab(this)))
+			if (typeof option == 'string') data[option]()
+		})
+	}
 
-  $.fn.tab.Constructor = Tab
+	$.fn.tab.Constructor = Tab
 
 
  /* TAB DATA-API
-  * ============ */
+	* ============ */
 
-  $(function () {
-    $('body').on('click.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    })
-  })
+	$(function () {
+		$('body').on('click.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
+			e.preventDefault()
+			$(this).tab('show')
+		})
+	})
 
 }( window.jQuery )

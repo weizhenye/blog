@@ -20,64 +20,64 @@
 
 !function( $ ){
 
-  "use strict"
+	"use strict"
 
  /* DROPDOWN CLASS DEFINITION
-  * ========================= */
+	* ========================= */
 
-  var toggle = '[data-toggle="dropdown"]'
-    , Dropdown = function ( element ) {
-        $(element).bind('click', this.toggle)
-      }
+	var toggle = '[data-toggle="dropdown"]'
+		, Dropdown = function ( element ) {
+				$(element).bind('click', this.toggle)
+			}
 
-  Dropdown.prototype = {
+	Dropdown.prototype = {
 
-    constructor: Dropdown
+		constructor: Dropdown
 
-  , toggle: function ( e ) {
-      var $this = $(this)
-        , selector = $this.attr('data-target') || $this.attr('href')
-        , $parent = $(selector)
-        , isActive
+	, toggle: function ( e ) {
+			var $this = $(this)
+				, selector = $this.attr('data-target') || $this.attr('href')
+				, $parent = $(selector)
+				, isActive
 
-      $parent.length || ($parent = $this.parent())
-      isActive = $parent.hasClass('open')
+			$parent.length || ($parent = $this.parent())
+			isActive = $parent.hasClass('open')
 
-      clearMenus()
+			clearMenus()
 
-      !isActive && $parent.toggleClass('open')
+			!isActive && $parent.toggleClass('open')
 
-      return false
-    }
+			return false
+		}
 
-  }
+	}
 
-  function clearMenus() {
-    $(toggle).parent().removeClass('open')
-  }
-
-
-  /* DROPDOWN PLUGIN DEFINITION
-   * ========================== */
-
-  $.fn.dropdown = function ( option ) {
-    return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('dropdown')
-      if (!data) $this.data('dropdown', (data = new Dropdown(this)))
-      if (typeof option == 'string') data[option].call($this)
-    })
-  }
-
-  $.fn.dropdown.Constructor = Dropdown
+	function clearMenus() {
+		$(toggle).parent().removeClass('open')
+	}
 
 
-  /* APPLY TO STANDARD DROPDOWN ELEMENTS
-   * =================================== */
+	/* DROPDOWN PLUGIN DEFINITION
+	 * ========================== */
 
-  $(function () {
-    $(window).on('click.dropdown.data-api', clearMenus)
-    $('body').on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
-  })
+	$.fn.dropdown = function ( option ) {
+		return this.each(function () {
+			var $this = $(this)
+				, data = $this.data('dropdown')
+			if (!data) $this.data('dropdown', (data = new Dropdown(this)))
+			if (typeof option == 'string') data[option].call($this)
+		})
+	}
+
+	$.fn.dropdown.Constructor = Dropdown
+
+
+	/* APPLY TO STANDARD DROPDOWN ELEMENTS
+	 * =================================== */
+
+	$(function () {
+		$(window).on('click.dropdown.data-api', clearMenus)
+		$('body').on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+	})
 
 }( window.jQuery )

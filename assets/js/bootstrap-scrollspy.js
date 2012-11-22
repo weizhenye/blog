@@ -19,96 +19,96 @@
 
 !function ( $ ) {
 
-  "use strict"
+	"use strict"
 
-  /* SCROLLSPY CLASS DEFINITION
-   * ========================== */
+	/* SCROLLSPY CLASS DEFINITION
+	 * ========================== */
 
-  function ScrollSpy( element ) {
-    var process = $.proxy(this.process, this)
+	function ScrollSpy( element ) {
+		var process = $.proxy(this.process, this)
 
-    this.$scrollElement = $(element).on('scroll.scroll.data-api', process)
-    this.selector = (this.$scrollElement.attr('data-target')
-      || this.$scrollElement.attr('href')
-      || '') + ' .nav li > a'
-    this.$body = $('body').on('click.scroll.data-api', this.selector, process)
+		this.$scrollElement = $(element).on('scroll.scroll.data-api', process)
+		this.selector = (this.$scrollElement.attr('data-target')
+			|| this.$scrollElement.attr('href')
+			|| '') + ' .nav li > a'
+		this.$body = $('body').on('click.scroll.data-api', this.selector, process)
 
-    this.refresh()
-    this.process()
-  }
+		this.refresh()
+		this.process()
+	}
 
-  ScrollSpy.prototype = {
+	ScrollSpy.prototype = {
 
-      constructor: ScrollSpy
+			constructor: ScrollSpy
 
-    , refresh: function () {
-        this.targets = this.$body
-          .find(this.selector)
-          .map(function () {
-            var href = $(this).attr('href')
-            return /^#\w/.test(href) && $(href).length ? href : null
-          })
+		, refresh: function () {
+				this.targets = this.$body
+					.find(this.selector)
+					.map(function () {
+						var href = $(this).attr('href')
+						return /^#\w/.test(href) && $(href).length ? href : null
+					})
 
-        this.offsets = $.map(this.targets, function (id) {
-          return $(id).position().top
-        })
-      }
+				this.offsets = $.map(this.targets, function (id) {
+					return $(id).position().top
+				})
+			}
 
-    , process: function () {
-        var scrollTop = this.$scrollElement.scrollTop() + 10
-          , offsets = this.offsets
-          , targets = this.targets
-          , activeTarget = this.activeTarget
-          , i
+		, process: function () {
+				var scrollTop = this.$scrollElement.scrollTop() + 10
+					, offsets = this.offsets
+					, targets = this.targets
+					, activeTarget = this.activeTarget
+					, i
 
-        for (i = offsets.length; i--;) {
-          activeTarget != targets[i]
-            && scrollTop >= offsets[i]
-            && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
-            && this.activate( targets[i] )
-        }
-      }
+				for (i = offsets.length; i--;) {
+					activeTarget != targets[i]
+						&& scrollTop >= offsets[i]
+						&& (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+						&& this.activate( targets[i] )
+				}
+			}
 
-    , activate: function (target) {
-        var active
+		, activate: function (target) {
+				var active
 
-        this.activeTarget = target
+				this.activeTarget = target
 
-        this.$body
-          .find(this.selector).parent('.active')
-          .removeClass('active')
+				this.$body
+					.find(this.selector).parent('.active')
+					.removeClass('active')
 
-        active = this.$body
-          .find(this.selector + '[href="' + target + '"]')
-          .parent('li')
-          .addClass('active')
+				active = this.$body
+					.find(this.selector + '[href="' + target + '"]')
+					.parent('li')
+					.addClass('active')
 
-        if ( active.parent('.dropdown-menu') )  {
-          active.closest('li.dropdown').addClass('active')
-        }
-      }
+				if ( active.parent('.dropdown-menu') )	{
+					active.closest('li.dropdown').addClass('active')
+				}
+			}
 
-  }
+	}
 
 
  /* SCROLLSPY PLUGIN DEFINITION
-  * =========================== */
+	* =========================== */
 
-  $.fn.scrollspy = function ( option ) {
-    return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('scrollspy')
-      if (!data) $this.data('scrollspy', (data = new ScrollSpy(this)))
-      if (typeof option == 'string') data[option]()
-    })
-  }
+	$.fn.scrollspy = function ( option ) {
+		return this.each(function () {
+			var $this = $(this)
+				, data = $this.data('scrollspy')
+			if (!data) $this.data('scrollspy', (data = new ScrollSpy(this)))
+			if (typeof option == 'string') data[option]()
+		})
+	}
 
-  $.fn.scrollspy.Constructor = ScrollSpy
+	$.fn.scrollspy.Constructor = ScrollSpy
 
 
  /* SCROLLSPY DATA-API
-  * ============== */
+	* ============== */
 
-  $(function () { $('[data-spy="scroll"]').scrollspy() })
+	$(function () { $('[data-spy="scroll"]').scrollspy() })
 
 }( window.jQuery )
