@@ -1,0 +1,22 @@
+CACHE MANIFEST
+
+# 2012-11-22 14:10
+
+CACHE:
+404.html
+index.html
+instruction.html
+moegirl.html
+css/gulu.css
+css/404.css
+js/gulu.js
+js/jquery-1.8.2.min.js
+img/border
+img/icon
+img/header.png
+img/HTML5.png
+img/404.png
+NETWORK:
+*
+FALLBACK:
+/ /404.html

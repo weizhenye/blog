@@ -5,6 +5,7 @@ footer, header, nav {
 	display: block;
 }
 footer {
+	margin: auto;
 	margin-top: -40px;
 }
 .nav>a {
@@ -33,9 +34,6 @@ img {
 }
 .wrapper p img {
 	clear: both;
-	display: block;
-	margin-left: -20px;
-	margin-right: -20px;
 }
 
 body {
@@ -48,9 +46,6 @@ body {
 a.label:hover {
 	color: #fff;
 	background-color: #F95B1F;
-}
-p a {
-	border-bottom: 1px dashed #CED1D1;
 }
 .container {
 	width: 640px;

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html manifest="gulu.manifest">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="弹幕,动漫,ACG" />
+	<title>咕噜</title>
+	<link rel="stylesheet" href="css/gulu.css">
+	<link rel="icon" href="favicon.ico">
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+	<div id="header"></div>
+	<div id="main">
+		<div id="avatar">
+			<!--a href="user/index.html"><img src="user/avatar.png" alt="Avatar"></a-->
+			<input id="username" type="text" title="用户名">
+			<input id="password" type="password" title="密码">
+			<input id="authcode" type="text" title="验证码">
+			<img src="img/authcode.png" alt="Authcode">
+			<a id="login" href="login.html"><b>登 录</b></a>
+			<a id="reg" href="reg.html"><b>注 册</b></a>
+		</div>
+		<div id="info">
+			<h1><a href="instruction.html">第一次请学习正确的打开姿势</a></h1>
+		</div>
+		<div id="videotitle"></div>
+		<div id="episode"></div>
+		<div id="subgroup"></div>
+		<div id="pool"><h1>目前只做了最基础的播放本地视频的功能,弹幕功能无限坑中...</h1></div>
+		<div id="video">
+			<input id="upload" type="file" title="点击打开文件或直接拖拽到这里">
+			<video></video>
+			<div id="box">
+				<span>X</span>
+				<div id="box_videotitle"><input type="text"></div>
+				<div id="box_episode">
+					<select>
+						<option>01</option>
+						<option>02</option>
+						<option>03</option>
+						<option>04</option>
+						<option>05</option>
+					</select>
+				</div>
+				<div id="box_subgroup">
+					<select>
+						<option>澄空[SumiSora]</option>
+						<option>华盟[CASO]</option>
+						<option>雪飘[FLsnow]</option>
+						<option>极影[KTXP]</option>
+						<option>动漫国[DMG]</option>
+						<option>天使[TSDM]</option>
+						<option>铃风[Suzu-Kaze]</option>
+					</select>
+				</div>
+				<button><b>确认</b></button>
+				<a href="add.html"><b>添加</b></a>
+			</div>
+		</div>
+		<div id="control">
+			<div id="time">00:00/00:00</div>
+			<div id="progressbar"><div id="progress"></div></div>
+			<button id="play" title="播放/暂停"></button>
+			<button id="volume" title="音量"></button>
+				<span id="volumebar_now"><span id="volumebar"></span></span>
+			<button id="widescreen" title="宽屏"></button>
+			<button id="fullscreen" title="全屏"></button>
+			<button id="switch" title="弹幕开关"></button>
+			<button id="mode" title="弹幕模式"></button>
+			<input id="input" type="text">
+			<input id="send" type="button" title="发送">
+		</div>
+	</div>
+	<div id="footer">
+		<img src="img/HTML5.png">
+		<dl>
+			<dt>关于</dt>
+			<dd><a href="#">新浪微博</a></dd>
+			<dd><a href="#">腾讯微博</a></dd>
+			<dd><a href="about.html">关于咕噜</a></dd>
+			<dd><a href="instruction.html">使用姿势</a></dd>
+		</dl>
+		<dl>
+			<dt>联系</dt>
+			<dd><a href="mailto:guheihei+bug(at)gmail.com">Bug报告</a></dd>
+			<dd><a href="mailto:guheihei+advice(at)gmail.com">意见建议</a></dd>
+			<dd><a href="mailto:guheihei+reg(at)gmail.com">注册邀请</a></dd>
+			<dd><a href="mailto:guheihei(at)gmail.com">其他事务</a></dd>
+		</dl>
+		<dl>
+			<dt>其他</dt>
+			<dd><a href="moegirl.html">萌化拟人</a></dd>
+			<dd><a href="wallpaper.html">图片壁纸</a></dd>
+			<dd><a href="activity.html">相关活动</a></dd>
+			<dd><a href="404.html">404 页面</a></dd>
+		</dl>
+		<dl>
+			<dt>友情链接</dt>
+			<dd><a href="#">####</a></dd>
+			<dd><a href="#">####</a></dd>
+			<dd><a href="#">####</a></dd>
+			<dd><a href="#">####</a></dd>
+		</dl>
+	</div>
+	<div id="copyright">© 2013 Gulu.tv - El PSY Congroo</div>
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/gulu.js"></script>
+</body>
+</html>
