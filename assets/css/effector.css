@@ -7,6 +7,9 @@ footer, header, nav {
 footer {
 	margin: auto;
 	margin-top: -40px;
+	font-size: 15px;
+	line-height: 25px;
+	color: #555;
 }
 .nav>a {
 	 margin:  0px 20px 0px 0px;
