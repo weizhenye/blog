@@ -68,7 +68,8 @@ $('#upload').change(function(){
 		ismute=0,
 		tmp_volume=1,
 		iswide=0,
-		ison=1;
+		ison=1,
+		modeon=0;
 
 	//__________Progress Bar__________
 	$('#progressbar').click(function(e){
@@ -117,7 +118,7 @@ $('#upload').change(function(){
 	})
 
 	//__________Play & Pause__________
-	function playbutton(){
+	function playButton(){
 		if(isplay){
 			$('#play').css('background','url(img/icon/4-9.png) no-repeat');
 			$('video')[0].pause();
@@ -127,20 +128,23 @@ $('#upload').change(function(){
 		}
 		isplay=1-isplay;
 	}
-	$('#play').click(playbutton);
-	$('video').click(playbutton);
+	$('#play').click(playButton);
+	$('video').click(playButton);
 
 	//__________Volume__________
+	function volumeIcon(){
+		if(tmp_volume>=0.75)
+			$('#volume').css('background','url(img/icon/10-9.png) no-repeat');
+		if(tmp_volume>=0.5&&tmp_volume<0.75)
+			$('#volume').css('background','url(img/icon/10-8.png) no-repeat');
+		if(tmp_volume>=0.25&&tmp_volume<0.5)
+			$('#volume').css('background','url(img/icon/10-7.png) no-repeat');
+		if(tmp_volume<0.25)
+			$('#volume').css('background','url(img/icon/10-6.png) no-repeat');
+	}
 	$('#volume').click(function(){
 		if(ismute){
-			if(tmp_volume>=0.75)
-				$(this).css('background','url(img/icon/10-9.png) no-repeat');
-			if(tmp_volume>=0.5&&tmp_volume<0.75)
-				$(this).css('background','url(img/icon/10-8.png) no-repeat');
-			if(tmp_volume>=0.25&&tmp_volume<0.5)
-				$(this).css('background','url(img/icon/10-7.png) no-repeat');
-			if(tmp_volume<0.25)
-				$(this).css('background','url(img/icon/10-6.png) no-repeat');
+			volumeIcon();
 			$('video')[0].volume=tmp_volume;
 		}else{
 			$(this).css('background','url(img/icon/10-10.png) no-repeat');
@@ -153,17 +157,10 @@ $('#upload').change(function(){
 		$('#volumebar_now').show();
 		$('#volumebar').click(function(e){
 			$('video')[0].volume=1-e.offsetY/40;
-			tmp_volume=$('video')[0].volume;
-			ismute=0;
 			$('#volumebar_now').css('height',e.offsetY);
-			if($('video')[0].volume>=0.75)
-				$('#volume').css('background','url(img/icon/10-9.png) no-repeat');
-			if($('video')[0].volume>=0.5&&$('video')[0].volume<0.75)
-				$('#volume').css('background','url(img/icon/10-8.png) no-repeat');
-			if($('video')[0].volume>=0.25&&$('video')[0].volume<0.5)
-				$('#volume').css('background','url(img/icon/10-7.png) no-repeat');
-			if($('video')[0].volume<0.25)
-				$('#volume').css('background','url(img/icon/10-6.png) no-repeat');
+			tmp_volume=$('video')[0].volume;
+			volumeIcon();
+			ismute=0;
 		})
 	})
 	$('#volumebar_now').mouseleave(function(){
@@ -205,7 +202,13 @@ $('#upload').change(function(){
 		else $(this).css('background','url(img/icon/1-8.png) no-repeat');
 		ison=1-ison;
 	})
+
 	//__________Mode__________
+	$('#mode').click(function(){
+		if(modeon) $(this).css('background','url(img/icon/9-3.png) no-repeat')
+		else $(this).css('background','url(img/icon/9-4.png) no-repeat');
+		modeon=1-modeon;
+	})
 
 	//__________Send Flying Comments__________
 

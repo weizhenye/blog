@@ -13,30 +13,44 @@ button,dd,h1,h2,h3,h4,h5,h6{
 	margin: 0;
 	padding: 0;
 }
-select
-{
-	-webkit-appearance: manulist-text;
-	appearance: manulist-text;
-}
-.unable{
+.cantsee{
 	color: white;
 }
-#header{
+#worldline{
+	width: 340px;
+	height: 75px;
+	margin: auto;
+	margin-top: 250px;
+}
+#itsme{
+	margin-top: 125px;
+	font-size: 20px;
+	color: #E7923D;
+	text-shadow:  0px 0px 15px #A6431B;
+	text-align: center;
+}
+header{
 	width: 1024px;
 	height: 240px;
 	background :url(../img/header.png) no-repeat;
 	margin: auto;
 	margin-bottom: 60px;
 }
+article{
+	width: 960px;
+	margin: auto;
+	font-size: 23px;
+	font-weight: bold;
+}
 #main{
 	width: 960px;
 	height: 540px;
 	margin: auto;
+	background: url(../img/main.png) no-repeat;
 }
 	#avatar{
 		width: 100px;
 		height: 100px;
-		background: url(../img/border/avatar.png) no-repeat;
 	}
 		#username,#password,#authcode{
 			width: 90px;
@@ -61,7 +75,6 @@ select
 	#info{
 		width: 540px;
 		height: 100px;
-		background: url(../img/border/info.png) no-repeat;
 		margin: -100px 0 0 100px;
 	}
 		#info h1{
@@ -71,20 +84,17 @@ select
 	#videotitle{
 		width: 360px;
 		height: 40px;
-		background: url(../img/border/videotitle.png) no-repeat;
 		text-align: center;
 	}
 	#episode{	
 		width: 60px;
 		height: 40px;
-		background: url(../img/border/episode.png) no-repeat;
 		margin: -40px 0 0 360px;
 		text-align: center;
 	}
 	#subgroup{	
 		width: 220px;
 		height: 40px;
-		background: url(../img/border/subgroup.png) no-repeat;
 		margin: -40px 0 0 420px;
 		text-align: center;
 	}
@@ -146,7 +156,6 @@ select
 	#pool{	
 		width: 320px;
 		height: 540px;
-		background: url(../img/border/pool.png) no-repeat;
 		margin: -140px 0 0 640px;
 	}
 	#video,#upload,video{
@@ -154,7 +163,6 @@ select
 		height: 360px;
 	}
 	#video{
-		background: url(../img/border/video.png) no-repeat;
 		margin-top: -400px;
 	}
 	.wide{
@@ -255,29 +263,29 @@ select
 			background-position: center;
 			position: absolute;
 		}
-#footer{
+footer{
 	width: 1024px;
-	height: 168px;
+	height: 160px;
 	font-size: 14px;
 	margin: auto;
 	margin-top: 100px;
 	background-color: #E9E9E9;
 }
-	#footer dt{
+	footer dt{
 		border-bottom: 1px solid #CCC;
 		margin-bottom: 10px;
 		padding-bottom: 14px;
 		font-size: 16px;
 		font-weight: bold;
 	}
-	#footer dl{
+	footer dl{
 		display: inline-block;
 		color: #353535;
 		width: 160px;
 		margin-top: 0px;
 		padding: 0 30px;
 	}
-	#footer img{
+	footer img{
 		margin-top: 18px;
 		width: 120px;
 	}

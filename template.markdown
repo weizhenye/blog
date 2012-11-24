@@ -1,9 +1,10 @@
 --- 
-layout: post
-title: %%TITLE%%
 date: %%DATE%%
+title: %%TITLE%%
+layout: post
+tags:
+	- 
 categories:
 	- 
-tags:
-	-
+published: false
 ---
