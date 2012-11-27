@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html manifest="gulu.manifest">
 <head>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="弹幕,动漫,ACG" />
+	<meta name="keywords" content="弹幕,动漫,ACG">
 	<title>咕噜</title>
 	<link rel="stylesheet" href="css/gulu.css">
 	<link rel="icon" href="favicon.ico">
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
-	<header></header>
+	<header><a href="index.html"><img src="img/logo.png" alt="LOGO"></a></header>
 	<div id="main">
 		<div id="avatar">
 			<!--a href="user/index.html"><img src="user/avatar.png" alt="Avatar"></a-->
@@ -23,22 +23,22 @@
 		<div id="info">
 			<h1><a href="instruction.html">第一次请学习正确的打开姿势</a></h1>
 		</div>
-		<div id="videotitle"></div>
+		<div id="videoTitle"></div>
 		<div id="episode"></div>
-		<div id="subgroup"></div>
+		<div id="subGroup"></div>
 		<div id="pool"><h1>目前只做了最基础的播放本地视频的功能,弹幕功能无限坑中...</h1></div>
 		<div id="video">
 			<input id="upload" type="file" title="点击打开文件或直接拖拽到这里">
 			<video></video>
 			<div id="box">
 				<span>X</span>
-				<div id="box_videotitle"><input type="text"></div>
-				<div id="box_episode">
+				<div id="boxVideoTitle"><input type="text"></div>
+				<div id="boxEpisode">
 					<select>
 						<option>00</option>
 					</select>
 				</div>
-				<div id="box_subgroup">
+				<div id="boxSubGroup">
 					<select>
 						<option>字幕组</option>
 					</select>
@@ -48,17 +48,17 @@
 			</div>
 		</div>
 		<div id="control">
+			<div id="progressBar"><div id="progress"></div></div>
 			<div id="time">00:00/00:00</div>
-			<div id="progressbar"><div id="progress"></div></div>
 			<button id="play" title="播放/暂停"></button>
 			<button id="volume" title="音量"></button>
-				<span id="volumebar_now"><span id="volumebar"></span></span>
-			<button id="widescreen" title="宽屏"></button>
-			<button id="fullscreen" title="全屏"></button>
+				<span id="volumeBarNow"><span id="volumeBar"></span></span>
+			<button id="wideScreen" title="宽屏"></button>
+			<button id="fullScreen" title="全屏"></button>
 			<button id="switch" title="弹幕开关"></button>
 			<button id="mode" title="弹幕模式"></button>
 			<input id="input" type="text">
-			<input id="send" type="button" title="发送">
+			<button id="send" title="发送"></button>
 		</div>
 	</div>
 	<footer>
@@ -94,6 +94,6 @@
 	</footer>
 	<div id="copyright">© 2013 Gulu.tv - El PSY Congroo</div>
 	<script src="js/jquery-1.8.2.min.js"></script>
-	<script src="js/gulu.js"></script>
+	<script src="js/GLPlayer.js"></script>
 </body>
 </html>

@@ -20,11 +20,9 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%
 }
-a {
-	text-decoration: none;
-}
-a:link,a:after {
+a:link,a:after,a {
 	color: purple;
+	text-decoration: none;
 }
 a:hover,a:focus {
 	color: yellow;

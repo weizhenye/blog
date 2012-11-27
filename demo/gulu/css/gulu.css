@@ -1,7 +1,7 @@
 body{
 	font-family: 微软雅黑;
 }
-a:link,a:after{
+a:link,a:after,a{
 	color: purple;
 	text-decoration: none;
 }
@@ -13,16 +13,16 @@ button,dd,h1,h2,h3,h4,h5,h6{
 	margin: 0;
 	padding: 0;
 }
-.cantsee{
+.cantSee{
 	color: white;
 }
-#worldline{
+#worldLine{
 	width: 340px;
 	height: 75px;
 	margin: auto;
 	margin-top: 250px;
 }
-#itsme{
+#itsMe{
 	margin-top: 125px;
 	font-size: 20px;
 	color: #E7923D;
@@ -32,9 +32,12 @@ button,dd,h1,h2,h3,h4,h5,h6{
 header{
 	width: 1024px;
 	height: 240px;
-	background :url(../img/header.png) no-repeat;
+	background :url(../img/header.png);
 	margin: auto;
 	margin-bottom: 60px;
+}
+header img{
+	width: 100px;
 }
 article{
 	width: 960px;
@@ -46,7 +49,7 @@ article{
 	width: 960px;
 	height: 540px;
 	margin: auto;
-	background: url(../img/main.png) no-repeat;
+	background: url(../img/border.png);
 }
 	#avatar{
 		width: 100px;
@@ -81,7 +84,7 @@ article{
 			position: absolute;
 			margin: 25px 0 0 60px;
 		}
-	#videotitle{
+	#videoTitle{
 		width: 360px;
 		height: 40px;
 		text-align: center;
@@ -92,7 +95,7 @@ article{
 		margin: -40px 0 0 360px;
 		text-align: center;
 	}
-	#subgroup{	
+	#subGroup{	
 		width: 220px;
 		height: 40px;
 		margin: -40px 0 0 420px;
@@ -112,33 +115,33 @@ article{
 			margin-right: 10px;
 			cursor: pointer;
 		}
-		#box_videotitle{
+		#boxVideoTitle{
 			width: 360px;
 			height: 320px;
 		}
-			#box_videotitle input{
+			#boxVideoTitle input{
 				width: 335px;
 				height: 34px;
 				font-size: 30px;
 				margin: 27px 0 0 10px;
 			}
-		#box_episode{
+		#boxEpisode{
 			width: 60px;
 			height: 320px;
 			margin: -320px 0 0 360px;
 		}
-			#box_episode select{
+			#boxEpisode select{
 				width: 60px;
 				height: 40px;
 				font-size: 30px;
 				margin-top: 27px;
 			}
-		#box_subgroup{
+		#boxSubGroup{
 			width: 220px;
 			height: 320px;
 			margin: -320px 0 0 420px;
 		}
-			#box_subgroup select{
+			#boxSubGroup select{
 				width: 200px;
 				height: 40px;
 				font-size: 20px;
@@ -189,19 +192,19 @@ article{
 			height: 32px;
 			border-width: 0;
 			position: absolute;
+			background :url(../img/button.png);
 		}
-		#time{
-			font-size: 11px;
-			margin: -5px 0 0 560px;
-			float: right;
-			position: absolute;
-		}
-		#progressbar{
+		#progressBar{
 			width: 560px;
 			height: 8px;
 			background: grey;
 			position: relative;
 			cursor: pointer;
+		}
+		#time{
+			font-size: 11px;
+			margin: -13px 0 0 560px;
+			position: absolute;
 		}
 			#progress{
 				width: 0;
@@ -209,58 +212,57 @@ article{
 				background: #333;
 				position: relative;
 			}
-		#play{
-			background :url(../img/icon/4-9.png) no-repeat;
+		button#play{
+			background-position: 0 0;
 		}
-		#volume{
-			background :url(../img/icon/10-9.png) no-repeat;
+		button#volume{
 			margin-left: 32px;
+			background-position: -192px 0;
 		}
-			#volumebar_now{
+			#volumeBarNow{
 				display: none;
 				background: white;
 				margin: -40px 0 0 42px;
 			}
-			#volumebar{
+			#volumeBar{
 				opacity: 0.8;
 				background: black;
 				margin: 0;
 			}
-			#volumebar,#volumebar_now{
+			#volumeBar,#volumeBarNow{
 				width: 8px;
 				height: 40px;
 				position: absolute;
 			}
-		#widescreen{
-			background: url(../img/icon/9-1.png) no-repeat;
+		button#wideScreen{
 			margin-left: 64px;
+			background-position: -224px 0;
 		}
-		#fullscreen{
-			background: url(../img/icon/8-2.png) no-repeat;
+		button#fullScreen{
+			background-position: -288px 0;
 			margin-left: 96px;
 		}
-		#switch{
-			background: url(../img/icon/1-8.png) no-repeat;
+		button#switch{
+			background-position: -320px 0;
 			margin-left: 128px;
 		}
-		#mode{
-			background: url(../img/icon/9-3.png) no-repeat;
+		button#mode{
+			background-position: -384px 0;
 			margin-left: 160px;
 		}
 		#input{
-			width: 383px;
+			width: 384px;
 			height: 26px;
-			margin-left: 193px;
+			margin-left: 192px;
 			font-size: 25px;
 			position: absolute;
 		}
-		#send{
+		button#send{
 			width: 60px;
 			height: 32px;
-			background: url(../img/icon/6-11.png) no-repeat;
+			background-position: -448px 0;
 			margin-left: 580px;
 			border-width: 1px;
-			background-position: center;
 			position: absolute;
 		}
 footer{
@@ -269,14 +271,11 @@ footer{
 	font-size: 14px;
 	margin: auto;
 	margin-top: 100px;
-	background-color: #E9E9E9;
+	background: #E9E9E9;
 }
-	footer dt{
-		border-bottom: 1px solid #CCC;
-		margin-bottom: 10px;
-		padding-bottom: 14px;
-		font-size: 16px;
-		font-weight: bold;
+	footer img{
+		margin-top: 18px;
+		width: 120px;
 	}
 	footer dl{
 		display: inline-block;
@@ -285,9 +284,12 @@ footer{
 		margin-top: 0px;
 		padding: 0 30px;
 	}
-	footer img{
-		margin-top: 18px;
-		width: 120px;
+	footer dt{
+		border-bottom: 1px solid #CCC;
+		margin-bottom: 10px;
+		padding-bottom: 14px;
+		font-size: 16px;
+		font-weight: bold;
 	}
 #copyright{
 	font-size: 14px;
