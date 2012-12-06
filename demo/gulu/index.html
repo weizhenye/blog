@@ -27,38 +27,45 @@
 		<div id="episode"></div>
 		<div id="subGroup"></div>
 		<div id="pool"><h1>目前只做了最基础的播放本地视频的功能,弹幕功能无限坑中...</h1></div>
-		<div id="video">
-			<input id="upload" type="file" title="点击打开文件或直接拖拽到这里">
-			<video></video>
-			<div id="box">
-				<span>X</span>
-				<div id="boxVideoTitle"><input type="text"></div>
-				<div id="boxEpisode">
-					<select>
-						<option>00</option>
-					</select>
+		<div id="videoAndControl">
+			<div id="video">
+				<input id="upload" type="file" title="点击打开文件或直接拖拽到这里">
+				<video></video>
+				<div id="box">
+					<span>X</span>
+					<div id="boxVideoTitle"><input type="search">暂无此功能</div>
+					<div id="boxEpisode">
+						<select>
+							<option value="00">00</option>
+							<option value="01">01</option>
+							<option value="01">02</option>
+						</select>
+					</div>
+					<div id="boxSubGroup">
+						<select>
+							<option value="字幕组0">字幕组0</option>
+							<option value="字幕组1">字幕组1</option>
+							<option value="字幕组1">字幕组2</option>
+						</select>
+					</div>
+					<button>确认</button>
+					<a href="add.html">添加</a>
 				</div>
-				<div id="boxSubGroup">
-					<select>
-						<option>字幕组</option>
-					</select>
-				</div>
-				<button><b>确认</b></button>
-				<a href="add.html"><b>添加</b></a>
+				<div id="danmu"></div>
 			</div>
-		</div>
-		<div id="control">
-			<div id="progressBar"><div id="progress"></div></div>
-			<div id="time">00:00/00:00</div>
-			<button id="play" title="播放/暂停"></button>
-			<button id="volume" title="音量"></button>
-				<span id="volumeBarNow"><span id="volumeBar"></span></span>
-			<button id="wideScreen" title="宽屏"></button>
-			<button id="fullScreen" title="全屏"></button>
-			<button id="switch" title="弹幕开关"></button>
-			<button id="mode" title="弹幕模式"></button>
-			<input id="input" type="text">
-			<button id="send" title="发送"></button>
+			<div id="control">
+				<div id="progressBar"><div id="progress"></div></div>
+				<div id="time">00:00/00:00</div>
+				<button id="play" title="播放/暂停"></button>
+				<button id="volume" title="音量"></button>
+					<span id="volumeBarNow"><span id="volumeBar"></span></span>
+				<button id="wideScreen" title="宽屏"></button>
+				<button id="fullScreen" title="全屏"></button>
+				<button id="switch" title="弹幕开关"></button>
+				<button id="mode" title="弹幕模式"></button>
+				<textarea id="tucao" type="text"></textarea>
+				<button id="send" title="发送"></button>
+			</div>
 		</div>
 	</div>
 	<footer>
@@ -80,8 +87,8 @@
 		<dl>
 			<dt>其他</dt>
 			<dd><a href="moegirl.html">萌化拟人</a></dd>
-			<dd><a href="wallpaper.html">图片壁纸</a></dd>
-			<dd><a href="activity.html">相关活动</a></dd>
+			<dd><a href="#">图片壁纸</a></dd>
+			<dd><a href="#">相关活动</a></dd>
 			<dd><a href="404.html">404 页面</a></dd>
 		</dl>
 		<dl>

@@ -2,7 +2,8 @@ $('#upload').change(function(){
 //==========Get Video==========
 	var	file=$(this)[0].files[0],
 		fileType='',
-		url,i=0;
+		url,
+		i=0;
 
 	while(i++<3) fileType=file.name[file.name.length-i].toLowerCase()+fileType;
 	if(fileType!='mp4'&&fileType!='mkv'&&fileType!='mov'&&fileType!='ogg')
@@ -37,45 +38,55 @@ $('#upload').change(function(){
 				while(file.name[i]!=']') episode+=file.name[i++];
 			}else isGet=0
 		}else isGet=0
-	}else isGet=0;//English word or number should be half size,or direct get the width
+	}else isGet=0;
 	//if(subGroup and videoTitle and episode NOT in MySQL) isGet=0;
-	if(!isGet){//Get info from users' input
-		$('#episode').text('⑨').css('font-size',30);
-		$('#subGroup').text('才不是因为我笨').css('font-size',30);
-		$('#videoTitle').text('自动匹配弹幕失败_(:з」∠)_').css('font-size',30);
+	if(!isGet){
+		$('#episode').text('⑨');
+		$('#subGroup').text('才不是因为我笨');
+		$('#videoTitle').text('自动匹配弹幕失败_(:з」∠)_');
 
 		$('#box').slideDown(300).find('span').click(function(){
 			$('#box').slideUp(300);
 		});
 
-		/*
-		videoTitle=input('videoTitle');
-		episode=select('episode');
-		subGroup=select('subGroup');
-		isGet=1;
-		*/
+		$('#box button').click(function(){
+			videoTitle=$('#boxVideoTitle input')[0].value;
+			episode=$('#boxEpisode select')[0].value;
+			subGroup=$('#boxSubGroup select')[0].value;
+			if(videoTitle&&episode&&subGroup) showTitle();
+		})
 	}
-	if(isGet){
-		//load flying comments 
+	if(isGet) showTitle();
+	function showTitle()
+	{
+		//load flying comments
 		$('#box').css('display','none');
-		$('#videoTitle').text(videoTitle).css('font-size',Math.min(360/videoTitle.length*1.8,30));
-		$('#subGroup').text(subGroup).css('font-size',Math.min(220/subGroup.length*1.8,30));
-		$('#episode').text(episode).css('font-size',Math.min(60/episode.length*1.8,30));
+		$('#danmu').css('z-index',0);
+		$('#videoTitle').text(videoTitle).css('font-size',Math.min(350*16/textWidth(videoTitle),30));
+		$('#subGroup').text(subGroup).css('font-size',Math.min(210*16/textWidth(subGroup),30));
+		$('#episode').text(episode).css('font-size',Math.min(50*16/textWidth(episode),30));
 	}
+
 //==========Controls==========
 	var	pointMinute=0,
 		pointSecond=0,
 		isPlay=0,
+		tmpPlay=0,
 		isMute=0,
 		tmpVolume=1,
 		isWide=0,
+		isFull=0,
+		tmpFull=0,
 		isOn=1,
-		modeOn=0;
+		modeOn=0,
+		text=0,
+		channel=0,
+		fontSize=24;
 
 	//__________Progress Bar__________
 	$('#progressBar').click(function(e){
 		if($('video')[0].currentTime){
-			$('#progress').css('width',e.offsetX+'px');
+			$('#progress').css('width',e.offsetX);
 			isWide	?	$('video')[0].currentTime=e.offsetX*$('video')[0].duration/880
 					:	$('video')[0].currentTime=e.offsetX*$('video')[0].duration/560;
 		}
@@ -101,7 +112,7 @@ $('#upload').change(function(){
 
 		isWide	?	progressWidth=$('video')[0].currentTime*880/$('video')[0].duration
 				:	progressWidth=$('video')[0].currentTime*560/$('video')[0].duration;
-		$('#progress').css('width',progressWidth+'px');
+		$('#progress').css('width',progressWidth);
 		if(minute<0) minute=0;
 		if(second<0) second=0;
 		if(minute<10) minute='0'+minute;
@@ -111,32 +122,35 @@ $('#upload').change(function(){
 		if(!totleMinute) totleMinute='00';
 		if(!totleSecond) totleSecond='00';
 		$('#time').text(minute+':'+second+'/'+totleMinute+':'+totleSecond);
+		if(document.webkitIsFullScreen!=tmpFull){
+			tmpFull=document.webkitIsFullScreen;
+			document.webkitIsFullScreen
+			?	enterFull()
+			:	quitFull();
+			if(isWide) enterWide();
+		}
 		if($('video')[0].ended) location.reload();
 	})
-
 	//__________Play & Pause__________
-	function playButton(){
-		if(isPlay++%2){
-			$('#play').css('background-position','0 0');
-			$('video')[0].pause();
-		}else{
-			$('#play').css('background-position','-32px 0');
-			$('video')[0].play();
-		}
-	}
 	$('#play').click(playButton);
 	$('video').click(playButton);
+	$('#danmu').click(playButton);
+	function playButton(){
+		if(isPlay){
+			$('#play').css('background-position',0);
+			$('video')[0].pause();
+			$('pre').each(function(){
+				$('pre').stop();//NOT WORK
+			});
+		}else{
+			$('#play').css('background-position',-32);
+			$('video')[0].play();
+			launchDanmu();
+		}
+		isPlay=1-isPlay;
+	}
 
 	//__________Volume__________
-	function volumeIcon(){
-		tmpVolume>0.7
-		?	$('#volume').css('background-position','-192px 0')
-		:	tmpVolume>0.4
-			?	$('#volume').css('background-position','-160px 0')
-			:	tmpVolume>0.1
-				?	$('#volume').css('background-position','-128px 0')
-				:	$('#volume').css('background-position','-96px 0')
-	}
 	$('#volume').mouseenter(function(){
 		$('#volumeBarNow').show().mouseleave(function(){
 			$(this).hide();
@@ -148,56 +162,148 @@ $('#upload').change(function(){
 			isMute=0;
 		})
 	}).click(function(){
-		if(isMute++%2){
+		if(isMute){
 			volumeIcon();
 			$('video')[0].volume=tmpVolume;
 		}else{
-			$(this).css('background-position','-64px 0');
+			$(this).css('background-position',-64);
 			tmpVolume=$('video')[0].volume;
 			$('video')[0].volume=0;
 		}
+		isMute=1-isMute;
 	})
+	function volumeIcon(){
+		tmpVolume>0.7
+		?	$('#volume').css('background-position',-192)
+		:	tmpVolume>0.4
+			?	$('#volume').css('background-position',-160)
+			:	tmpVolume>0.1
+				?	$('#volume').css('background-position',-128)
+				:	$('#volume').css('background-position',-96)
+	}
 
 	//__________wide Screen__________
 	$('#wideScreen').click(function(){
-		if(isWide++%2){
-			$(this).css('background-position','-224px 0');
-			$('#video').removeClass();
-			$('video').removeClass();
-			$('#control').removeClass();
-			$('#progressBar').css('width','560px');
-			$('#time').css('margin-left','560px');
-			$('#input').css('width','383px');
-			$('#send').css('margin-left','580px');
-		}else{
-			$(this).css('background-position','-256px 0');
-			$('#video').addClass('wide');
-			$('video').addClass('wide');
-			$('#control').addClass('wide');
-			$('#progressBar').css('width','880px');
-			$('#time').css('margin-left','880px');
-			$('#input').css('width','703px');
-			$('#send').css('margin-left','900px');
-		}
+		isWide	?	quitWide()
+				:	enterWide();
+		isWide=1-isWide;
 	})
-
+	function enterWide(){
+		document.webkitCancelFullScreen();
+		$('#fullScreen').css('background-position',-288);
+		$('#wideScreen').css('background-position',-256);
+		$('#video').removeClass().addClass('wide');
+		$('video').removeClass().addClass('wide');
+		$('#danmu').removeClass().addClass('wide');
+		$('#control').css({'width':960,'left':'auto','bottom':'auto'})
+		$('#progressBar').css('width',880);
+		$('#time').css('margin-left',880);
+		$('#tucao').css('width',703);
+		$('#send').css('margin-left',900);
+	}
+	function quitWide(){
+		$('#wideScreen').css('background-position',-224);
+		$('#video').removeClass().addClass('normal');
+		$('video').removeClass().addClass('normal');
+		$('#danmu').removeClass().addClass('normal');
+		$('#control').css('width',640);
+		$('#progressBar').css('width',560);
+		$('#time').css('margin-left',560);
+		$('#tucao').css('width',383);
+		$('#send').css('margin-left',580);
+	}
 	//__________Full Screen__________
 	$('#fullScreen').click(function(){
-		$('video')[0].webkitRequestFullScreen();
+		document.webkitIsFullScreen
+		?	document.webkitCancelFullScreen()
+		:	$('#videoAndControl')[0].webkitRequestFullScreen();
 	})
+	function enterFull(){
+		isWide=0;
+		$('#wideScreen').css('background-position',-224);
+		$('#fullScreen').css('background-position',-320);
+		$('#video').removeClass().addClass('full').css({
+			'width':window.screen.width,
+			'height':window.screen.height-40
+		})
+		$('video').removeClass().addClass('full').css({
+			'width':window.screen.width,
+			'height':window.screen.height-40
+		})
+		$('#danmu').removeClass().addClass('full').css({
+			'width':window.screen.width,
+			'height':window.screen.height-40
+		})
+		$('#control').css({'width':window.screen.width,'bottom':0,'left':0})
+		$('#progressBar').css('width',window.screen.width-80);
+		$('#time').css('margin-left',window.screen.width-80);
+		$('#tucao').css('width',window.screen.width-257);
+		$('#send').css('margin-left',window.screen.width-60);
+	}
+	function quitFull(){
+		$('#fullScreen').css('background-position',-288);
+		$('#video').removeClass().addClass('normal');
+		$('video').removeClass().addClass('normal');
+		$('#danmu').removeClass().addClass('normal');
+		$('#control').css({'width':640,'position':'static'});
+		$('#progressBar').css('width',560);
+		$('#time').css('margin-left',560);
+		$('#tucao').css('width',383);
+		$('#send').css('margin-left',580);
+	}
 
 	//__________Switch__________
 	$('#switch').click(function(){
-		isOn++%2	?	$(this).css('background-position','-352px 0')
-					:	$(this).css('background-position','-320px 0');
+		isOn	?	$(this).css('background-position',-384)
+				:	$(this).css('background-position',-352);
+		isOn	?	$('#danmu').css('z-index',-233)
+				:	$('#danmu').css('z-index',233);
+		isOn=1-isOn;
 	})
 
 	//__________Mode__________
 	$('#mode').click(function(){
-		modeOn++%2	?	$(this).css('background-position','-384px 0')
-					:	$(this).css('background-position','-416px 0');
+		modeOn	?	$(this).css('background-position',-416)
+				:	$(this).css('background-position',-448);
+		modeOn=1-modeOn;
 	})
 
 	//__________Send Flying Comments__________
+	$('#send').click(function(){
+		var	text=$('#tucao')[0].value;
 
+		//upload the text to MySQL
+		$('#tucao')[0].value='';
+		if(text) setDanmu(text,channel,fontSize,$('video').width(),$('video').height());
+		if(isPlay) launchDanmu();
+	})
+
+//==========Functions==========
+	function textWidth(text){
+		var	tmp=$('<pre></pre>').text(text).appendTo('header').css({'font-size':fontSize,'display':'none'}),
+			width=tmp.width();
+		tmp.remove();
+		return width;
+	}
+	function setDanmu(text,channel,fontSize,videoWidth,videoHeight){
+		$('<pre></pre>').text(text).appendTo('#danmu').css({
+			'display':'block',
+			'position':'absolute',
+			'margin-top':channel,
+			'font-size':fontSize,
+			'right':-textWidth(text),
+		});
+	}
+	function launchDanmu(){
+		var	v=0;
+		$('pre').each(function(){
+			v=( $('video').width() + textWidth( $(this).text() ) ) / 5120;
+			$(this).animate(
+				{right:$('video').width()},
+				( textWidth( $(this).text() ) + $(this)[0].offsetLeft ) / v,
+				'linear',function(){
+					$(this).remove();
+			})
+		})
+	}
 })

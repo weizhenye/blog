@@ -2,7 +2,6 @@ markdown: rdiscount
 permalink: /:title
 title: 木偶的天空
 url: http://muou.tk/
-subscribe: http://feeds.feedburner.com/weizhenye
 exclude: README.md
 domain: muou.tk
 author: weizhenye
