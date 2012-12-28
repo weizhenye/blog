@@ -13,7 +13,7 @@ footer {
 	text-align: center;
 }
 .nav>a {
-	 margin:  0px 20px 0px 0px;
+	 margin: 0px 20px 0px 0px;
 }
 html {
 	font-size: 100%;
@@ -86,12 +86,12 @@ h1 small {
 	font-size: 16px;;
 }
 h2 {
-	color:  #777;
+	color: #777;
 	background-color: #F2F8F7;
-	margin:  20px -20px;
-	font-size:  20px;
-	padding:  0px 20px;
-	line-height:  35px;
+	margin: 20px -20px;
+	font-size: 20px;
+	padding: 0px 20px;
+	line-height: 35px;
 }
 h2 small {
 	font-size: 18px;
@@ -182,7 +182,7 @@ blockquote p {
 	font-size: 14px;
 	line-height: 34px;
 	font-weight: 300;
-	color:  #777;
+	color: #777;
 }
 blockquote small {
 	display: block;
@@ -249,13 +249,13 @@ pre {
 }
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
-margin: 0 0 0 33px; /* IE indents via margin-left */
+	margin: 0 0 0 33px; /* IE indents via margin-left */
 } 
 ol.linenums li {
-padding-left: 12px;
-color: #bebec5;
-line-height: 18px;
-text-shadow: 0 1px 0 #fff;
+	padding-left: 12px;
+	color: #bebec5;
+	line-height: 18px;
+	text-shadow: 0 1px 0 #fff;
 }
 .com {
 	color: #93a1a1;
@@ -353,44 +353,45 @@ text-shadow: 0 1px 0 #fff;
 .sitename {
 	font-size: 40px;
 	font-weight: bold;
-	color:  #333;
+	color: #333;
 }
-.wrapper  {
-	background-color:  #fff;
-	margin:  10px 0px 50px 0px;
-	padding:  10px 20px;
-	moz-border-radius:  5px;
-	webkit-moz-border-radius:  5px;
-	 border-radius:  5px;
-	-webkit-box-shadow:  0px 1px 3px #A8ABAB;
-	-moz-box-shadow:  0px 1px 3px #A8ABAB;
-	box-shadow:  0px 1px 3px #A8ABAB;
+.wrapper {
+	background-color: #fff;
+	margin: 10px 0px 50px 0px;
+	padding: 10px 20px;
+	moz-border-radius: 5px;
+	webkit-moz-border-radius: 5px;
+	 border-radius: 5px;
+	-webkit-box-shadow: 0px 1px 3px #A8ABAB;
+	-moz-box-shadow: 0px 1px 3px #A8ABAB;
+	box-shadow: 0px 1px 3px #A8ABAB;
 }
 .postsList {
 	margin: 0px 0px 10px 0px;
 }
 .postsList li{
-  list-style: none;
-  padding: 5px 3px;
-  margin: 0;
-  border-bottom: 1px solid #eee;
+	list-style: none;
+	padding: 5px 3px;
+	margin: 0;
+	border-bottom: 1px solid #eee;
 }
 .postsList li span{
 	color: #bbb;
-  float: right;
-  font-size: 14px;
+	float: right;
+	font-size: 14px;
 }
 @media only screen and (max-width:768px) {
 	.container {
-	width:  auto;
-	padding: 20px;
-}
-.sitename {
-	font-size: 24px;
-	font-weight: bold;
-	text-align: center;
-}
-.wrapper  {
-	background-color:  #fff;
-	margin:  10px 0px 20px 0px;
+		width: auto;
+		padding: 20px;
+	}
+	.sitename {
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.wrapper {
+		background-color: #fff;
+		margin: 10px 0px 20px 0px;
+	}
 }

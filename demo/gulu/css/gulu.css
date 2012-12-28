@@ -76,10 +76,12 @@ article{
 		}
 		#login{
 			margin-left: 4px;
+			font-weight: bold;
 		}
 		#reg{
 			position: absolute;
 			margin-left: 18px;
+			font-weight: bold;
 		}
 	#info{
 		width: 540px;
@@ -171,8 +173,9 @@ article{
 	#danmu{
 		width: 640px;
 		height: 360px;
-		overflow:hidden;
+		overflow: hidden;
 		position: absolute;
+		display: none;
 		z-index: -233;
 	}
 	#pool{	

@@ -1,5 +1,5 @@
 $('#upload').change(function(){
-//==========Get Video==========
+//==========Get URL==========
 	var	file=$(this)[0].files[0],
 		fileType='',
 		url,
@@ -24,7 +24,6 @@ $('#upload').change(function(){
 	var	subGroup='',
 		videoTitle='',
 		episode='',
-		size=0,
 		isGet=1;
 		i=1;
 
@@ -61,7 +60,7 @@ $('#upload').change(function(){
 	{
 		//load flying comments
 		$('#box').css('display','none');
-		$('#danmu').css('z-index',0);
+		$('#danmu').css({'z-index':0,'display':'block'});
 		$('#videoTitle').text(videoTitle).css('font-size',Math.min(350*16/textWidth(videoTitle),30));
 		$('#subGroup').text(subGroup).css('font-size',Math.min(210*16/textWidth(subGroup),30));
 		$('#episode').text(episode).css('font-size',Math.min(50*16/textWidth(episode),30));
@@ -75,7 +74,6 @@ $('#upload').change(function(){
 		isMute=0,
 		tmpVolume=1,
 		isWide=0,
-		isFull=0,
 		tmpFull=0,
 		isOn=1,
 		modeOn=0,
@@ -104,6 +102,7 @@ $('#upload').change(function(){
 
 	//__________Time__________
 	setInterval(function(){
+		if($('video')[0].ended) location.reload();
 		var	progressWidth,
 			minute=Math.floor($('video')[0].currentTime/60),
 			second=Math.floor($('video')[0].currentTime%60),
@@ -122,14 +121,29 @@ $('#upload').change(function(){
 		if(!totleMinute) totleMinute='00';
 		if(!totleSecond) totleSecond='00';
 		$('#time').text(minute+':'+second+'/'+totleMinute+':'+totleSecond);
+		$('video.full').mouseenter(function(){//why this can't be out of setInterval?
+			//$('#control').css('bottom',0);
+			//$('#video').css('height',window.screen.height-40);
+			//$('video').css('height',window.screen.height-40);
+			$('#control').animate({bottom:0},233);
+			$('#video').animate({height:window.screen.height-40},233);
+			$('video').animate({height:window.screen.height-40},233);
+
+			$('#danmu.full').mouseenter(function(){//why animate don't work here?
+				//$('#control').css('bottom',-40);
+				//$('#video').css('height',window.screen.height);
+				//$('video').css('height',window.screen.height);
+				$('#control').animate({bottom:-40},233);
+				$('#video').animate({height:window.screen.height},233);
+				$('video').animate({height:window.screen.height},233);
+			})
+			
+		})
 		if(document.webkitIsFullScreen!=tmpFull){
 			tmpFull=document.webkitIsFullScreen;
-			document.webkitIsFullScreen
-			?	enterFull()
-			:	quitFull();
+			tmpFull?enterFull():quitFull();
 			if(isWide) enterWide();
 		}
-		if($('video')[0].ended) location.reload();
 	})
 	//__________Play & Pause__________
 	$('#play').click(playButton);
@@ -184,12 +198,11 @@ $('#upload').change(function(){
 
 	//__________wide Screen__________
 	$('#wideScreen').click(function(){
-		isWide	?	quitWide()
-				:	enterWide();
+		isWide?quitWide():enterWide();
 		isWide=1-isWide;
 	})
 	function enterWide(){
-		document.webkitCancelFullScreen();
+		if(document.webkitIsFullScreen) document.webkitCancelFullScreen();
 		$('#fullScreen').css('background-position',-288);
 		$('#wideScreen').css('background-position',-256);
 		$('#video').removeClass().addClass('wide');
@@ -216,25 +229,25 @@ $('#upload').change(function(){
 	$('#fullScreen').click(function(){
 		document.webkitIsFullScreen
 		?	document.webkitCancelFullScreen()
-		:	$('#videoAndControl')[0].webkitRequestFullScreen();
+		:	$('#videoAndControl')[0].webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
 	})
 	function enterFull(){
 		isWide=0;
 		$('#wideScreen').css('background-position',-224);
 		$('#fullScreen').css('background-position',-320);
 		$('#video').removeClass().addClass('full').css({
-			'width':window.screen.width,
-			'height':window.screen.height-40
+			'width'	:window.screen.width,
+			'height':window.screen.height
 		})
 		$('video').removeClass().addClass('full').css({
-			'width':window.screen.width,
-			'height':window.screen.height-40
+			'width'	:window.screen.width,
+			'height':window.screen.height
 		})
 		$('#danmu').removeClass().addClass('full').css({
-			'width':window.screen.width,
+			'width'	:window.screen.width,
 			'height':window.screen.height-40
 		})
-		$('#control').css({'width':window.screen.width,'bottom':0,'left':0})
+		$('#control').css({'width':window.screen.width,'bottom':-40,'left':0})
 		$('#progressBar').css('width',window.screen.width-80);
 		$('#time').css('margin-left',window.screen.width-80);
 		$('#tucao').css('width',window.screen.width-257);
