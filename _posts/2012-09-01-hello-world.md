@@ -6,7 +6,7 @@ tags:
     - 
 categories:
     - 个人
-    - 电脑
+    - 计算机
 published: true
 ---
 

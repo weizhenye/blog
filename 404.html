@@ -3,22 +3,22 @@ layout: default
 title: 404
 ---
 <div class="alert">
-	<h1><strong>110010100错误 - 传说中的该页无法显示</strong></h1>
+	<h1>110010100错误 - 传说中的该页无法显示</h1>
 	您可以看看下面的文章列表
 </div>
 <div class="wrapper">
 	{% capture post_year1 %}{{ 'now' | date: '%Y' }}{% endcapture %}
-	<h2>{{ post_year1 }}</h2>
-	<ul>
+	<div class="listTitle"><time>{{ post_year1 }}</time></div>
+	<ul class="postsList">
 		{% for post in site.posts %}
 		{% capture post_year2 %}{{ post.date | date: '%Y' }}{% endcapture %}
 		{% if post_year1 != post_year2 %}
 		{% assign post_year1 = post_year2 %}
 	</ul>
-	<h2>{{ post_year1 }}</h2>
-	<ul>
+	<div class="listTitle"><time>{{ post_year1 }}</time></div>
+	<ul class="postsList">
 		{% endif %}
-		<li><span>{{ post.date | date: "%b %d, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+		<li><a href="{{ post.url }}">{{ post.title }}</a><time>{{ post.date | date: "%b %d, %Y" }}</time></li>
 		{% endfor %}
 	</ul>
 </div>
