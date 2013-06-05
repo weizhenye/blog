@@ -15,14 +15,12 @@
 html {
 	tab-size: 4;
 	font-size: 100%;
-webkit-text-size-adjust: 100%;
-ms-text-size-adjust: 100%;
 }
 body {
 	margin: 0;
 	color: #555;
 	background-color: #E6EBEA;
-	font-size: 15px;
+	font-size: 16px;
 	font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 25px;
 }
@@ -36,22 +34,23 @@ header {
 nav {
 	text-align: center;
 }
-nav>a {
-	 margin: 0 10px;
+nav a {
+	margin: 0 10px;
 }
-a:link,a {
-	color: purple;
+a:link, a {
+	color: #808;
 	text-decoration: none;
 }
-a:hover,a:focus {
-	color: yellow;
-	background: purple;
+a:hover, a:focus {
+	color: #FF0;
+	background: #808;
 }
 img {
+
 	max-width: 600px;
 	height: auto;
 	border: 0;
-ms-interpolation-mode: bicubic;
+	-ms-interpolation-mode: bicubic;
 }
 footer {
 	color: #555;
@@ -78,7 +77,7 @@ footer {
 }
 p {
 	color: #555;
-	font-size: 15px;
+	font-size: 16px;
 	line-height: 25px;
 	margin: 0 0 14px;
 }
@@ -88,7 +87,6 @@ p {
 	line-height: 60px;
 	font-weight: normal;
 	margin: 0;
-	text-rendering: optimizelegibility;
 }
 .listTitle {
 	color: #777;
@@ -99,12 +97,13 @@ p {
 	margin: 20px -20px;
 	padding: 0px 20px;
 }
+.mask {
+	background-color: #555;
+}
 ul, ol {
+	margin: 0;
 	padding: 0;
 	margin-left: 25px;
-}
-ul ul, ul ol, ol ol, ol ul {
-	margin-bottom: 0;
 }
 ul {
 	list-style: disc;
@@ -131,27 +130,30 @@ em {
 	font-style: italic;
 }
 q {
-	padding: 2px;
+	padding: 2px 0;
 	border-radius: 3px;
 	background-color: #DDD;
+}
+q:before {
+	content: "「";
+}
+q:after {
+	content: "」";
 }
 blockquote {
 	padding: 0 0 0 14px;
 	margin: 0 0 30px;
-	border-left: 5px solid #EEE;
+	border-left: 5px solid #DDD;
+	font-weight: bold;
 }
 blockquote p {
 	margin-bottom: 0;
 	font-size: 14px;
 	line-height: 34px;
-	font-weight: 300;
 	color: #777;
 }
-blockquote:before, blockquote:after, q:before, q:after {
-	content: "";
-}
 code, pre {
-	font-family: Monaco, Menlo, "Courier New", monospace;
+	font-family: "source code pro", Monaco, Menlo, "Courier New", monospace;
 	font-size: 12px;
 }
 code {
@@ -231,12 +233,6 @@ ol.linenums li {
 	display: inline-block;
 	padding: 5px 14px;
 	border-radius: 14px;
-}
-.pager .next a {
-	float: right;
-}
-.pager .previous a {
-	float: left;
 }
 .label {
 	padding: 3px 3px 2px;
