@@ -46,11 +46,9 @@ a:hover, a:focus {
 	background: #808;
 }
 img {
-
 	max-width: 600px;
 	height: auto;
 	border: 0;
-	-ms-interpolation-mode: bicubic;
 }
 footer {
 	color: #555;
@@ -175,44 +173,6 @@ pre {
 	white-space: pre-wrap;
 	word-break: break-all;
 }
-.prettyprint.linenums{
-	box-shadow: inset 40px 0 0 #FBFBFC, inset 41px 0 0 #ECECF0;
-}
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums {
-	margin: 0 0 0 33px; /* IE indents via margin-left */
-} 
-ol.linenums li {
-	padding-left: 12px;
-	color: #BEBEC5;
-	line-height: 18px;
-	text-shadow: 0 1px 0 #FFF;
-}
-.com {
-	color: #93A1A1;
-}
-.lit {
-	color: #AE81FF;
-}
-.pun, .opn, .clo {
-	color: #93A1A1;
-}
-.fun {
-	color: #DC322F;
-	text-shadow: 0 1px 0 #FFF;
-}
-.str, .atv {
-	color: #F9263C;
-}
-.kwd, .linenums .tag {
-	color: #00A3D9;
-}
-.typ, .atn, .dec, .var {
-	color: teal;
-}
-.pln {
-	color: #48484C;
-}
 .pager {
 	margin: 0 0 10px;
 	list-style: none;
@@ -265,9 +225,6 @@ ol.linenums li {
 .title time {
 	color: #CED1D1;
 	font-size: 16px;
-}
-.alert {
-	text-align: center;
 }
 @media only screen and (max-width:768px) {
 	.container {

@@ -2,7 +2,7 @@
 layout: default
 title: 404
 ---
-<div class="alert">
+<div style="text-align: center;">
 	<h1>110010100错误 - 传说中的该页无法显示</h1>
 	您可以看看下面的文章列表
 </div>
@@ -18,7 +18,10 @@ title: 404
 	<div class="listTitle"><time>{{ post_year1 }}</time></div>
 	<ul class="postsList">
 		{% endif %}
-		<li><a href="{{ post.url }}">{{ post.title }}</a><time>{{ post.date | date: "%b %d, %Y" }}</time></li>
+		<li>
+			<a href="{{ post.url }}">{{ post.title }}</a>
+			<time>{{ post.date | date: "%b %d, %Y" }}</time>
+		</li>
 		{% endfor %}
 	</ul>
 </div>

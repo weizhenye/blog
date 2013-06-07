@@ -14,6 +14,8 @@ published: true
 
 ![转座位](http://ssb90a.bay.livefilestore.com/y1p51m1M2ANxRnype27ywDcmgkt5PqvGJiHlWhEf8OdzHYXlqBl__CAPC6rQppJow9b4ns3eP1IcFpGDNJhR3iBrYZGKGpeoYPk/P20905-170705.jpg)
 
+<!-- more -->
+
 　　宁波东站的普通列车候车室是在地下, 臭, 非常臭, 真的很臭.
 
 　　中午12点出发, 次日中午11:17到站. 爸妈硬卧, 我坐票. 本想轮流睡, 但我白天睡太饱了, 晚上很精神. 看了看微博后手机没电了. 熄灯后站在有灯光的车厢之间看萌芽. 你看, 独自一人, 火车, 深夜, 萌芽, 旅途, 突然就文艺了-_-!!!

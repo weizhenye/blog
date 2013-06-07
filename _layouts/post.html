@@ -3,24 +3,22 @@ layout: default
 ---
 <div class="wrapper">
 	<article>
-		<div class="title"><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a><time class="pull-right">{{ page.date | date:"%b %d, %Y" }}</time></div>
+		<div class="title">
+			<a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
+			<time class="pull-right">{{ page.date | date:"%b %d, %Y" }}</time>
+		</div>
 		{{ content }}
 	</article>
-	<div>
-		{% for tag in page.tags %}
-		<a class="label" href="/tag/#{{ tag }}">{{ tag }}</a>
-		{% endfor %}
-	</div>
 	<hr>
 	<ul class="pager">
 		{% if page.previous %}
 		<li class="previous">
-			<a href="{{ page.previous.url }}" class="pull-left">&larr; {{ page.previous.title }}</a>
+			<a href="{{ page.previous.url }}" class="pull-left">&larr; <b>{{ page.previous.title }}</b></a>
 		</li>
 		{% endif %}
 		{% if page.next %} 
 		<li class="next">
-			<a href="{{ page.next.url }}" class="pull-right">{{ page.next.title }} &rarr;</a>
+			<a href="{{ page.next.url }}" class="pull-right"><b>{{ page.next.title }}</b> &rarr;</a>
 		</li>
 		{% endif %}   
 	</ul>
