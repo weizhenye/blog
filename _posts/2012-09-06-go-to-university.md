@@ -12,9 +12,9 @@ published: true
 
 　　4日刚拿到驾驶证, 5日早上便由我开车去火车站. 估计这是寒假之前最后一次碰方向盘了. 先坐动车到宁波东站. 动车的两头都可以开, 但印象中作为永远是朝前的. 后来才知道原来座位是可以360度转的, 到终点站后列车员会把座位一个个转过来.
 
-![转座位](http://ssb90a.bay.livefilestore.com/y1p51m1M2ANxRnype27ywDcmgkt5PqvGJiHlWhEf8OdzHYXlqBl__CAPC6rQppJow9b4ns3eP1IcFpGDNJhR3iBrYZGKGpeoYPk/P20905-170705.jpg)
-
 <!-- more -->
+
+![转座位](http://ssb90a.bay.livefilestore.com/y1p51m1M2ANxRnype27ywDcmgkt5PqvGJiHlWhEf8OdzHYXlqBl__CAPC6rQppJow9b4ns3eP1IcFpGDNJhR3iBrYZGKGpeoYPk/P20905-170705.jpg)
 
 　　宁波东站的普通列车候车室是在地下, 臭, 非常臭, 真的很臭.
 

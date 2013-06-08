@@ -19,20 +19,43 @@ html {
 body {
 	margin: 0;
 	color: #555;
-	background-color: #E6EBEA;
+	background: #C0DEED url(../img/bg-clouds.png) repeat-x;
 	font-size: 16px;
 	font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 25px;
+	animation: animatedBackground 40s linear infinite;
+	-ms-animation: animatedBackground 40s linear infinite;
+	-moz-animation: animatedBackground 40s linear infinite;
+	-webkit-animation: animatedBackground 40s linear infinite;
+}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-webkit-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-ms-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-moz-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
 }
 header {
-	font-size: 40px;
+	height: 60px;
+	font-size: 50px;
 	font-weight: bold;
-	line-height: 60px;
+	line-height: 50px;
 	text-align: center;
 	color: #333;
+	margin: 30px 0;
 }
 nav {
 	text-align: center;
+	margin-bottom: 30px;
 }
 nav a {
 	margin: 0 10px;
@@ -44,6 +67,10 @@ a:link, a {
 a:hover, a:focus {
 	color: #FF0;
 	background: #808;
+}
+a img {
+	border-width: 0;
+	vertical-align: middle;
 }
 img {
 	max-width: 600px;
