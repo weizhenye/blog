@@ -3,10 +3,10 @@ date: 2013-06-10 20:00:00
 title: Hello Alone
 layout: post
 tags:
-	- 
+    - 
 categories:
-	- Personal
-	- Anime
+    - Personal
+    - Anime
 published: true
 ---
 
