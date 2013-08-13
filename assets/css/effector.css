@@ -12,22 +12,6 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: #999;
 }
-html {
-	tab-size: 4;
-	font-size: 100%;
-}
-body {
-	margin: 0;
-	color: #555;
-	background: #C0DEED url(../img/bg-clouds.png) repeat-x;
-	font-size: 16px;
-	font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	line-height: 25px;
-	animation: animatedBackground 40s linear infinite;
-	-ms-animation: animatedBackground 40s linear infinite;
-	-moz-animation: animatedBackground 40s linear infinite;
-	-webkit-animation: animatedBackground 40s linear infinite;
-}
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }
@@ -44,6 +28,22 @@ body {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }
 }
+html {
+	tab-size: 4;
+	font-size: 100%;
+}
+body {
+	margin: 0;
+	color: #555;
+	background: #C0DEED url(../img/bg-clouds.png) repeat-x;
+	font-size: 16px;
+	font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 25px;
+	animation: animatedBackground 40s linear infinite;
+	-ms-animation: animatedBackground 40s linear infinite;
+	-moz-animation: animatedBackground 40s linear infinite;
+	-webkit-animation: animatedBackground 40s linear infinite;
+}
 header {
 	height: 60px;
 	font-size: 50px;
@@ -54,6 +54,7 @@ header {
 	margin: 30px 0;
 }
 nav {
+	font-size: 18px;
 	text-align: center;
 	margin-bottom: 30px;
 }
@@ -120,7 +121,7 @@ p {
 	line-height: 35px;
 	background-color: #F2F8F7;
 	margin: 20px -20px;
-	padding: 0px 20px;
+	padding: 0 20px;
 }
 .mask {
 	background-color: #555;
@@ -178,8 +179,8 @@ blockquote p {
 	color: #777;
 }
 code, pre {
-	font-family: "source code pro", Monaco, Menlo, "Courier New", monospace;
 	font-size: 12px;
+	font-family: "source code pro", Monaco, Menlo, "Courier New", monospace;
 }
 code {
 	padding: 3px 4px;
@@ -258,13 +259,15 @@ pre {
 		width: auto;
 		padding: 20px;
 	}
-	header {
-		font-size: 24px;
-		font-weight: bold;
-		text-align: center;
-	}
 	.wrapper {
 		background-color: #FFF;
 		margin: 10px 0 20px;
+	}
+	header {
+		font-size: 40px;
+		font-weight: bold;
+	}
+	footer {
+		margin: -10px auto auto;
 	}
 }
