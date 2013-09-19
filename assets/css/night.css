@@ -23,10 +23,17 @@ body, header, footer {
 q {
 	color: #333;
 }
+hr {
+	border-top: 1px solid #888;
+}
 .mask {
 	background-color: #CCC;
 }
-.title time {
+.listTitle {
+	color: #555;
+	background-color: #999;
+}
+.postsList li time, .title time {
 	color: #555;
 }
 .wrapper {
@@ -34,18 +41,12 @@ q {
 	box-shadow: 0 1px 3px #333;
 }
 .twinkling {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	width: 100%;
 	height: 100%;
-	display: block;
-	position: absolute;
 	background: transparent url(../img/twinkling.png) repeat top center;
-	-moz-animation: twink 200s linear infinite;
-	-ms-animation: twink 200s linear infinite;
-	-o-animation: twink 200s linear infinite;
-	-webkit-animation: twink 200s linear infinite;
-	animation: twink 200s linear infinite;
+	-moz-animation: twink 400s linear infinite;
+	-ms-animation: twink 400s linear infinite;
+	-o-animation: twink 400s linear infinite;
+	-webkit-animation: twink 400s linear infinite;
+	animation: twink 400s linear infinite;
 }
