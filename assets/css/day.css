@@ -1,0 +1,23 @@
+@keyframes clouds {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-webkit-keyframes clouds {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-ms-keyframes clouds {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-moz-keyframes clouds {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+body {
+	background: #C0DEED url(../img/day.png) repeat-x;
+	animation: clouds 40s linear infinite;
+	-ms-animation: clouds 40s linear infinite;
+	-moz-animation: clouds 40s linear infinite;
+	-webkit-animation: clouds 40s linear infinite;
+}

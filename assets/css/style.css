@@ -12,22 +12,6 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: #999;
 }
-@keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 100% 0; }
-}
-@-webkit-keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 100% 0; }
-}
-@-ms-keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 100% 0; }
-}
-@-moz-keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 100% 0; }
-}
 html {
 	tab-size: 4;
 	font-size: 100%;
@@ -35,14 +19,9 @@ html {
 body {
 	margin: 0;
 	color: #555;
-	background: #C0DEED url(../img/bg-clouds.png) repeat-x;
 	font-size: 16px;
 	font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 25px;
-	animation: animatedBackground 40s linear infinite;
-	-ms-animation: animatedBackground 40s linear infinite;
-	-moz-animation: animatedBackground 40s linear infinite;
-	-webkit-animation: animatedBackground 40s linear infinite;
 }
 header {
 	height: 60px;
@@ -102,13 +81,11 @@ footer {
 	clear: both;
 }
 p {
-	color: #555;
 	font-size: 16px;
 	line-height: 25px;
 	margin: 0 0 14px;
 }
 .title {
-	color: #555;
 	font-size: 24px;
 	line-height: 60px;
 	font-weight: normal;
@@ -260,7 +237,6 @@ pre {
 		padding: 20px;
 	}
 	.wrapper {
-		background-color: #FFF;
 		margin: 10px 0 20px;
 	}
 	header {

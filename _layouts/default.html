@@ -4,11 +4,17 @@
 	<meta charset="UTF-8">
 	<title>{{ page.title }}</title>
 	<meta name="author" content="{{ site.author }}"/>
-	<link rel="stylesheet" type="text/css" href="/assets/css/effector.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/day.css">
 	<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml" />
+	<script>
+		var	t=new Date(),
+			h=t.getHours(),
+			link=document.getElementsByTagName('link');
+		if(h<6||h>18) link[1].href="assets/css/night.css";
+	</script>
 </head>
-<body>
-
+<body><div class="twinkling">
 <div class="container">
 	<header>{{ site.title }}</header>
 	<nav>
@@ -22,9 +28,9 @@
 	{{ content }}
 	
 	<footer>
-		Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://pages.github.com/">GitHub</a> | Designed by <a href="http://ztpala.com">Tao Zhang</a> and <a href="http://muou.tk">ZhenYe Wei</a>
+		Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://pages.github.com/">GitHub</a> | Designed by <a href="http://ztpala.com/">Tao Zhang</a> and <a href="http://muou.tk/">ZhenYe Wei</a>
 	</footer>
-</div>
+</div></div>
 <script type="text/javascript">
 	var	_gaq = _gaq || [];
 		_gaq.push(['_setAccount', '{{site:googleAnalyticsID}}']);
