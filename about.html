@@ -13,3 +13,16 @@ permalink: /about/
 		</ul>
 	</div>
 </div>
+
+<script>
+	// Test Bangumi API
+	var req = new XMLHttpRequest();
+	req.open('GET', 'http://api.bgm.tv/user/woozy/collection?cat=watching', true);
+	req.onreadystatechange = function () {
+		if (req.readyState == 4 && req.status == 200) {
+			// var data = JSON.parse( req.responseText );
+			console.log(req.responseText);
+		}
+	};
+	req.send(null);
+</script>

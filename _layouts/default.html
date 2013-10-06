@@ -8,8 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/day.css">
 	<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml" />
 	<script>
-		var	t=new Date(),
-			h=t.getHours(),
+		var	h=new Date().getHours(),
 			link=document.getElementsByTagName('link');
 		if(h<6||h>18) link[1].href="/assets/css/night.css";
 	</script>
