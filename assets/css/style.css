@@ -223,12 +223,12 @@ pre {
 	border-bottom: 1px solid #EEE;
 }
 .postsList li time{
-	color: #BBB;
+	color: #D2C8ED;
 	float: right;
 	font-size: 14px;
 }
 .title time {
-	color: #CED1D1;
+	color: #D2C8ED;
 	font-size: 16px;
 }
 @media only screen and (max-width:768px) {
