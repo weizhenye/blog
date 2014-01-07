@@ -62,7 +62,7 @@ footer {
 	font-size: 15px;
 	line-height: 25px;
 	text-align: center;
-	margin: -40px auto auto;
+	margin: -20px auto auto;
 	display: block;
 }
 .container {
@@ -72,7 +72,7 @@ footer {
 }
 .wrapper {
 	background-color: #FFF;
-	margin: 10px 0 50px;
+	margin: 10px 0 30px;
 	padding: 10px 20px;
 	border-radius: 5px;
 	box-shadow: 0 1px 3px #A8ABAB;
