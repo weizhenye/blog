@@ -15,38 +15,41 @@
 	to {background-position: -10000px 5000px;}
 }
 a:link, a {
-	color: #D2C8ED;
+	color: #A38FD4;
 	text-decoration: none;
 }
 a:hover, a:focus {
 	color: #FF0;
-	background: #D2C8ED;
+	background: #A38FD4;
 }
 body {
 	background: #000 url(../img/stars.png) repeat top center;
 }
 body, header, footer {
-	color: #CCC;
+	color: #F8F8F0;
 }
 q {
-	color: #333;
+	background-color: #4B493C;
+}
+strong {
+	color: #E02668;
 }
 hr {
 	border-top: 1px solid #333;
 }
 .mask {
-	background-color: #CCC;
+	background-color: #F8F8F0;
 }
 .listTitle {
-	color: #555;
-	background-color: #999;
+	color: #F8F8F0;
+	background-color: #4B493C;
 }
 .postsList li time, .title time {
-	color: #D2C8ED;
+	color: #9B9B9B;
 }
 .wrapper {
-	background-color: #222;
-	box-shadow: 0 1px 3px #333;
+	background-color: #272822;
+	box-shadow: 0 1px 3px #222;
 }
 .twinkling {
 	width: 100%;
