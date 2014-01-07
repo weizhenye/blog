@@ -41,12 +41,12 @@ nav a {
 	margin: 0 10px;
 }
 a:link, a {
-	color: #AD82DA;
+	color: #A38FD4;
 	text-decoration: none;
 }
 a:hover, a:focus {
 	color: #FF0;
-	background: #AD82DA;
+	background: #A38FD4;
 }
 a img {
 	border-width: 0;
