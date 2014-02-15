@@ -4,7 +4,7 @@ title: 存档
 permalink: /archive/
 ---
 <div class="wrapper">
-	{% capture post_year1 %}{{ 'now' | date: '%Y' }}{% endcapture %}
+	{% capture post_year1 %}{{ date: '%Y' }}{% endcapture %}
 	<div class="listTitle"><time>{{ post_year1 }}</time></div>
 	<ul class="postsList">
 		{% for post in site.posts %}

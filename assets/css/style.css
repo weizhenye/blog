@@ -83,7 +83,7 @@ footer {
 p {
 	font-size: 16px;
 	line-height: 25px;
-	margin: 0 0 14px;
+	margin: 0 0 10px;
 }
 .title {
 	font-size: 24px;
@@ -144,16 +144,14 @@ q:after {
 	content: "」";
 }
 blockquote {
-	padding: 0 0 0 14px;
-	margin: 0 0 30px;
-	border-left: 5px solid #DDD;
 	font-weight: bold;
+	border-left: 5px solid #DDD;
+	margin: 0 0 10px;
+	padding: 0 0 0 14px;
 }
 blockquote p {
-	margin-bottom: 0;
-	font-size: 14px;
-	line-height: 34px;
 	color: #777;
+	margin-bottom: 0;
 }
 code, pre {
 	font-size: 12px;
