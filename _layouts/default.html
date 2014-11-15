@@ -1,47 +1,37 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>{{ page.title }}</title>
-	<meta name="author" content="{{ site.author }}"/>
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/day.css">
-	<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml" />
-	<script>
-		var	h=new Date().getHours(),
-			link=document.getElementsByTagName('link');
-		if(h<6||h>18) link[1].href="/assets/css/night.css";
-	</script>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="author" content="{{ site.author }}"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml" />
 </head>
-<body><div class="twinkling">
-<div class="container">
-	<header>{{ site.title }}</header>
-	<nav>
-		<a href="/">主页</a>
-		<a href="/archive">存档</a>
-		<!-- <a href="/category">分类</a>
-		<a href="/links">链接</a> -->
-		<a href="/about">关于</a>
-	</nav>
-	
-	{{ content }}
-	
-	<footer>
-		Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://pages.github.com/">GitHub</a> | Designed by <a href="http://ztpala.com/">Tao Zhang</a> and <a href="http://muou.tk/">ZhenYe Wei</a>
-	</footer>
-</div></div>
-<script type="text/javascript">
-	var	_gaq = _gaq || [];
-		_gaq.push(['_setAccount', '{{site:googleAnalyticsID}}']);
-		_gaq.push(['_trackPageview']);
-	(function() {
-		var	ga = document.createElement('script');
-			ga.type = 'text/javascript';
-			ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var	s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(ga, s);
-	})();
+<body>
+<div class="twinkling">
+  <header class="site-header">
+  <div class="site-title">I'M WOOZY</div>
+    <nav class="site-nav">
+        <a href="/">主页</a>
+        <a href="/archive">存档</a>
+        <a href="http://about.me/weizhenye">关于</a>
+    </nav>
+  </header>
+  <div class="yojouhan">
+    {{ content }}
+  </div>
+  <footer class="site-footer">
+    Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> and <a href="http://pages.github.com/">GitHub</a> | Designed by <a href="{{ site.url }}">woozy</a>
+  </footer>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-34447075-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
 </body>
