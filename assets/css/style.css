@@ -182,6 +182,9 @@ p {
 .post-list time {
   float: right;
 }
+#disqus_thread {
+  margin: 0 24px;
+}
 .mask {
   background-color: #000;
 }
