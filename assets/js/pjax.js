@@ -13,6 +13,7 @@ function pjax(url, flag) {
       if (!text) return;
       var tmpDOM = document.implementation.createHTMLDocument('', 'html', null);
       tmpDOM.documentElement.innerHTML = text;
+      document.title = tmpDOM.title;
       document.querySelector('#pjax-container').innerHTML = tmpDOM.querySelector('#pjax-container').innerHTML;
       var title = tmpDOM.querySelector('title').text;
       if (flag) {
