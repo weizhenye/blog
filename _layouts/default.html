@@ -6,15 +6,10 @@
   <meta name="author" content="{{ site.author }}"/>
   <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml">
-  {% if page.previous %}
-  <link rel="prev" href="{{ page.previous.url }}" title="{{ page.previous.title }}">
-  {% endif %}
-  {% if page.next %}
-  <link rel="next" href="{{ page.next.url }}" title="{{ page.next.title }}">
-  {% endif %}
 </head>
 <body>
 <div class="twinkling">
+  <div id="progress"></div>
   <header class="site-header">
     <div class="site-title">{{ site.title }}</div>
     <nav class="site-nav">

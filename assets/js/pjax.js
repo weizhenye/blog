@@ -1,33 +1,29 @@
-function $x(url, callback) {
+function pjax(url, flag) {
   var xhr = new XMLHttpRequest();
+  var progress = document.querySelector('#progress');
+  xhr.onprogress = function(e) {
+    progress.style.width = (e.loaded / e.total) * 100 + '%';
+  };
+  xhr.onload = function() {
+    progress.style.width = '0%';
+  };
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      callback && callback(xhr.responseText, xhr);
+      var text = xhr.responseText;
+      if (!text) return;
+      var tmpDOM = document.implementation.createHTMLDocument('', 'html', null);
+      tmpDOM.documentElement.innerHTML = text;
+      document.querySelector('#pjax-container').innerHTML = tmpDOM.querySelector('#pjax-container').innerHTML;
+      var title = tmpDOM.querySelector('title').text;
+      if (flag) {
+        window.history.pushState({ url: url }, title, url);
+      } else {
+        window.history.replaceState({ url: url }, title);
+      }
     }
-  }
+  };
   xhr.open('GET', url, true);
   xhr.send(null);
-}
-function pjax(url, flag) {
-  $x(url, function(text, xhr) {
-    if (!text) return;
-    var tmpDOM = document.implementation.createHTMLDocument('', 'html', null);
-    tmpDOM.documentElement.innerHTML = text;
-    document.querySelector('#pjax-container').innerHTML = tmpDOM.querySelector('#pjax-container').innerHTML;
-    document.head.innerHTML = tmpDOM.head.innerHTML;
-    var title = tmpDOM.querySelector('title').text;
-    if (flag) {
-      window.history.pushState({
-        url: url,
-        title: title
-      }, title, url);
-    } else {
-      window.history.replaceState({
-        url: url,
-        title: title
-      }, title);
-    }
-  });
 }
 document.addEventListener('click', function(e) {
   var ele = e.target;
@@ -40,7 +36,6 @@ document.addEventListener('click', function(e) {
     pjax(ele.pathname, 1);
   }
 });
-
 window.addEventListener('popstate', function(e) {
   pjax(e.state.url, 0);
 });

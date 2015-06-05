@@ -58,6 +58,15 @@ p {
   color: #000;
   margin: 8px 0;
 }
+#progress {
+  width: 0%;
+  height: 8px;
+  background-color: #dc0370;
+  z-index: 233;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
 .site-header {
   text-align: center;
   margin: 0 0 40px 0;
