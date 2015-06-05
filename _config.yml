@@ -1,5 +1,5 @@
 markdown: rdiscount
-permalink: /articles/:title
+permalink: /articles/:title/
 title: I'M WOOZY
 url: http://woozy.im/
 exclude: [README.md, CNAME]
