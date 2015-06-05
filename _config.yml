@@ -1,11 +1,10 @@
 markdown: rdiscount
-permalink: /:title
+permalink: /articles/:title
 title: I'M WOOZY
 url: http://woozy.im/
-exclude: README.md
+exclude: [README.md, CNAME]
 domain: woozy.im
 author: weizhenye
 email: weizhenye@gmail.com
-auto: true
 googleAnalyticsID: UA-34447075-1
-disqusShortname: muou
+disqusShortName: muou

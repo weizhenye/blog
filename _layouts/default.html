@@ -5,23 +5,32 @@
   <title>{{ page.title }}</title>
   <meta name="author" content="{{ site.author }}"/>
   <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml">
+  {% if page.previous %}
+  <link rel="prev" href="{{ page.previous.url }}" title="{{ page.previous.title }}">
+  {% endif %}
+  {% if page.next %}
+  <link rel="next" href="{{ page.next.url }}" title="{{ page.next.title }}">
+  {% endif %}
 </head>
 <body>
 <div class="twinkling">
   <header class="site-header">
-  <div class="site-title">I'M WOOZY</div>
+    <div class="site-title">{{ site.title }}</div>
     <nav class="site-nav">
-        <a href="/">主页</a>
-        <a href="/archive">存档</a>
-        <a href="http://about.me/weizhenye">关于</a>
+      <a href="/">主页</a>
+      <a href="/articles">文章</a>
+      <a href="https://about.me/weizhenye" target="_blank">关于</a>
     </nav>
   </header>
+  <div id="pjax-container">
   {{ content }}
+  </div>
   <footer class="site-footer">
-    Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> and <a href="http://pages.github.com/">GitHub</a> | Designed by <a href="{{ site.url }}">woozy</a>
+    Designed by <a href="{{ site.url }}">woozy</a><br>Powered by <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a> and <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
   </footer>
 </div>
+<script src="/assets/js/pjax.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
