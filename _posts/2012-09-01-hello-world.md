@@ -6,7 +6,7 @@ tags:
     - 
 categories:
     - Personal
-    - IT
+    - Tech
 published: true
 ---
 
