@@ -4,18 +4,19 @@ function pjax(url, flag) {
   xhr.onprogress = function(e) {
     progress.style.width = (e.loaded / e.total) * 100 + '%';
   };
-  xhr.onload = function() {
+  xhr.onloadend = function() {
     progress.style.width = '0%';
   };
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var text = xhr.responseText;
       if (!text) return;
-      var tmpDOM = document.implementation.createHTMLDocument('', 'html', null);
-      tmpDOM.documentElement.innerHTML = text;
-      document.title = tmpDOM.title;
-      document.querySelector('#pjax-container').innerHTML = tmpDOM.querySelector('#pjax-container').innerHTML;
-      var title = tmpDOM.querySelector('title').text;
+      var parser = new DOMParser();
+      var tmpDOM = parser.parseFromString(text, 'text/html');
+      var title = tmpDOM.title;
+      document.title = title;
+      document.querySelector('#pjax-container').innerHTML =
+        tmpDOM.querySelector('#pjax-container').innerHTML;
       if (flag) {
         window.history.pushState({ url: url }, title, url);
       } else {
