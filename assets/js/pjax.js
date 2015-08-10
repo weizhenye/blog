@@ -3,9 +3,12 @@ function pjax(url, flag) {
   var progress = document.querySelector('#progress');
   xhr.onprogress = function(e) {
     progress.style.width = (e.loaded / e.total) * 100 + '%';
+    xhr.onprogress = null;
   };
   xhr.onloadend = function() {
     progress.style.width = '0%';
+    xhr.onloadend = null;
+    xhr = null;
   };
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -22,6 +25,7 @@ function pjax(url, flag) {
       } else {
         window.history.replaceState({ url: url }, title);
       }
+      xhr.onreadystatechange = null;
     }
   };
   xhr.open('GET', url, true);

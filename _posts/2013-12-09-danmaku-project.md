@@ -1,6 +1,6 @@
 ---
 date: 2013-12-23 01:00:00
-title: 弹幕算法
+title: 弹幕项目
 layout: post
 tags:
     - 
