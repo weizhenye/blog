@@ -41,8 +41,43 @@
 body {
   background: #000 url(../img/stars.png) repeat top center;
   font-size: 16px;
-  font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;;
   margin: 0;
+}
+h1 {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin: .7em 0 .2em 0;
+}
+h2 {
+  font-size: 1.8em;
+  line-height: 1.5em;
+  margin: .7em 0 .2em 0;
+}
+h3 {
+  font-size: 1.6em;
+  line-height: 1.5em;
+  margin: .7em 0 .2em 0;
+}
+h4 {
+  font-size: 1.4em;
+  line-height: 1.5em;
+  margin: .7em 0 .2em 0;
+}
+h5,
+h6 {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin: .7em 0 .2em 0;
+}
+p {
+  color: #000;
+  font-size: 16px;
+  line-height: 1.7em;
+  text-indent: 2em;
+  text-align: justify;
+  text-justify: ideographic;
+  margin-bottom: 1.7em;
 }
 a:link,
 a {
@@ -53,10 +88,6 @@ a:hover,
 a:focus {
   color: #dc0370;
   background-color: #f8e694;
-}
-p {
-  color: #000;
-  margin: 8px 0;
 }
 #progress {
   width: 0%;
@@ -133,6 +164,10 @@ p {
   box-shadow: 0 1px 3px #28163d;
   position: relative;
 }
+.post img {
+  max-width: 592px;
+  text-indent: 0;
+}
 .post-header {
   margin: 8px 24px 0 24px;
 }
@@ -178,7 +213,7 @@ p {
 .list-title {
   font-size: 20px;
   font-weight: bold;
-  background-color: #FEE0B9;
+  background-color: #fee0b9;
   padding: 4px 0 4px 24px;
 }
 .post-list {
@@ -223,6 +258,7 @@ blockquote {
 }
 blockquote p {
   color: #ddd;
+  text-indent: 0;
   margin-bottom: 0;
 }
 hr {
