@@ -266,6 +266,8 @@ hr {
 code, pre {
   font-size: 12px;
   font-family: 'source code pro', Monaco, Menlo, 'Courier New', monospace;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 code {
   color: #fff;
