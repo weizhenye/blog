@@ -1,12 +1,6 @@
-function pjax(url, flag) {
+var pjax = function(url, flag) {
   var xhr = new XMLHttpRequest();
-  var progress = document.querySelector('#progress');
-  xhr.onprogress = function(e) {
-    progress.style.width = (e.loaded / e.total) * 100 + '%';
-    xhr.onprogress = null;
-  };
   xhr.onloadend = function() {
-    progress.style.width = '0%';
     xhr.onloadend = null;
     xhr = null;
   };
