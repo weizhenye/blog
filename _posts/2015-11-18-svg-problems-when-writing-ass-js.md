@@ -32,5 +32,4 @@ ASS 中的 `\clip` 指令可以对字幕进行路径切割，而 IE 还不支持
 
 边框可以使用 &lt;feMorphology&gt; 来做，处理完后的图形是比原图形胖一点的实心图形，还需要用 &lt;feComposite&gt; 中的 `operator="out"` 把原图形从处理完的图形中减去，这样才能得到单纯的边框。在有模糊效果的情况下，边框是不会向内模糊的，也就是要先模糊边框再减去原图形。阴影则使用 &lt;feOffset&gt;，阴影的生成应当是基于边框的，因为边框也是有投影的。由于在 ASS 中当原图形是全透明但有不透明边框的情况下，其阴影就只是边框的投影，所以阴影要根据原图形的透明度分两种情况生成。对于边框与阴影的模糊效果，先模糊再叠加和先叠加再模糊两种方式得到的效果似乎是一样的，我是使用前者。
 
-在应用 filter 属性时，由于 &lt;svg&gt; 上有 viewBox 属性，图形被缩放了，而 filter 直接在应用 &lt;svg&gt; 上，也被缩放了。一开始我是把 &lt;filter&gt; 中的值都除以相应的倍数，然后发现 Chrome 下无法渲染出小于 1  的边框，非常蛋疼。想了想只要先经过 viewBox 再应用 filter 就可以正常了，于是想到把 filter 应用到 &lt;svg&gt; 的父元素 &lt;span&gt; 上，但是 IE 又不支持在 HTML 元素上应用 filter。得把问题在 &lt;svg&gt; 中解决，于是去找可以使用 viewBox 的元素，发现了 &lt;symbol&gt;，把 filter 写 &lt;use&gt; 里终于可以优雅解决。大致的代码流程在[这里](https://codepen.io/weizhenye/pen/XmypVp)有。
-
+在应用 filter 属性时，由于 &lt;svg&gt; 上有 viewBox 属性，图形被缩放了，而 filter 直接在应用 &lt;svg&gt; 上，也被缩放了。一开始我是把 &lt;filter&gt; 中的值都除以相应的倍数，然后发现 Chrome 下无法渲染出小于 1  的边框，非常蛋疼。想了想只要先经过 viewBox 再应用 filter 就可以正常了，于是想到把 filter 应用到 &lt;svg&gt; 的父元素 &lt;span&gt; 上，但是 IE 又不支持在 HTML 元素上应用 filter。得把问题在 &lt;svg&gt; 中解决，于是去找可以使用 viewBox 的元素，发现了 &lt;symbol&gt;，把 filter 写 &lt;use&gt; 里终于可以优雅解决。最后又产生了新的问题：直接给 &lt;svg&gt; 使用原图形宽高的话，&lt;filter&gt; 的效果会被切割掉，导致显示不完整。解决方法是计算出上下左右边框、阴影和模糊的宽度，给 &lt;svg&gt; 另加一个 viewBox，这样这里的 viewBox 不会缩放图形，也能显示 &lt;filter&gt; 部分了。大致的代码流程在[这里](https://codepen.io/weizhenye/pen/XmypVp)有。
