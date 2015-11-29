@@ -1,8 +1,9 @@
-var pjax = function(url, flag) {
+var pjax = function(url, flag, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onloadend = function() {
     xhr.onloadend = null;
     xhr = null;
+    callback && callback();
   };
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -14,11 +15,8 @@ var pjax = function(url, flag) {
       document.title = title;
       document.querySelector('#pjax-container').innerHTML =
         tmpDOM.querySelector('#pjax-container').innerHTML;
-      if (flag) {
-        window.history.pushState({ url: url }, title, url);
-      } else {
-        window.history.replaceState({ url: url }, title);
-      }
+      if (flag) window.history.pushState({url: url}, title, url);
+      else window.history.replaceState({url: url}, title);
       xhr.onreadystatechange = null;
     }
   };

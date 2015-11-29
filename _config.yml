@@ -1,9 +1,10 @@
 permalink: /articles/:title/
 title: I'M WOOZY
-url: http://woozy.im/
+url: https://woozy.im
 exclude: [README.md, CNAME]
 domain: woozy.im
-author: weizhenye
+author: Zhenye Wei
 email: weizhenye@gmail.com
+excerpt_separator: <!-- more -->
 googleAnalyticsID: UA-34447075-1
 disqusShortName: muou

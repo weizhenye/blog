@@ -145,7 +145,7 @@ a:focus {
   top: 275px;
   left: 610px;
 }
-.post {
+.article {
   width: 640px;
   background-color: #848451;
   margin: auto;
@@ -154,42 +154,42 @@ a:focus {
   box-shadow: 0 1px 3px #28163d;
   position: relative;
 }
-.post img {
+.article img {
   max-width: 592px;
   text-indent: 0;
 }
-.post-header {
+.article-header {
   margin: 8px 24px 0 24px;
 }
-.post-title {
+.article-title {
   font-size: 24px;
   line-height: 36px;
   display: inline;
 }
-.post-time {
+.article-time {
   color: #999;
   float: right;
 }
-.post-section {
+.article-section {
   line-height: 24px;
   margin: 0 24px;
   clear: both;
 }
-.post-footer {
+.article-footer {
   margin: 0 24px;
 }
-.post-nav {
+.article-nav {
   margin: 0 24px;
 }
-.post-nav:before,
-.post-nav:after {
+.article-nav:before,
+.article-nav:after {
   content: '';
   display: table;
 }
-.post-nav:after {
+.article-nav:after {
   clear: both;
 }
-.post-nav a {
+.article-nav a {
   border-radius: 12px;
   display: inline-block;
   padding: 16px 8px;
@@ -206,15 +206,15 @@ a:focus {
   background-color: #fee0b9;
   padding: 4px 0 4px 24px;
 }
-.post-list {
+.article-list {
   margin: 16px 24px;
   padding: 0;
   list-style: none;
 }
-.post-list li {
+.article-list li {
   line-height: 24px;
 }
-.post-list time {
+.article-list time {
   float: right;
 }
 #disqus_thread {
@@ -285,7 +285,7 @@ pre {
   margin: 0 30px;
 }
 @media only screen and (max-width: 768px) {
-  .post {
+  .article {
     width: auto;
   }
 }
