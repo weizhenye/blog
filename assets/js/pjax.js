@@ -22,7 +22,30 @@ var pjax = function(url, flag, callback) {
   };
   xhr.open('GET', url, true);
   xhr.send(null);
-}
+};
+var pjaxCallback = function() {
+  window.ga && ga('send', 'pageview');
+  if (/^\/articles\/.+/.test(window.location.pathname)) {
+    var disqus_config = function() {
+      this.page.url = window.location.href;
+      this.page.identifier = window.location.pathname;
+    };
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//muou.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    }
+  }
+};
+pjaxCallback();
 document.addEventListener('click', function(e) {
   var ele = e.target;
   if (ele &&
@@ -31,9 +54,9 @@ document.addEventListener('click', function(e) {
       ele.hostname === location.hostname) {
     if (!window.history) return;
     e.preventDefault();
-    pjax(ele.pathname, 1);
+    pjax(ele.pathname, 1, pjaxCallback);
   }
 });
 window.addEventListener('popstate', function(e) {
-  pjax(e.state.url, 0);
+  pjax(e.state.url, 0, pjaxCallback);
 });
