@@ -13,6 +13,8 @@ var pjax = function(url, flag, callback) {
       var tmpDOM = parser.parseFromString(text, 'text/html');
       var title = tmpDOM.title;
       document.title = title;
+      document.querySelector('meta[name=description]').content =
+        tmpDOM.querySelector('meta[name=description]').content;
       document.querySelector('#pjax-container').innerHTML =
         tmpDOM.querySelector('#pjax-container').innerHTML;
       if (flag) window.history.pushState({url: url}, title, url);
