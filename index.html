@@ -3,15 +3,16 @@ layout: default
 title: I'M WOOZY
 permalink: /
 ---  
-<div class="yojouhan">
-  {% for post in site.posts limit:4 %}
-  <article class="tatami">
-    <header class="article-header">
-      <h2 class="article-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <time class="article-time">{{ post.date | date:"%Y-%m-%d" }}</time>
-    </header>
-    <section class="article-section">{{ post.excerpt }}</section>
-    <footer class="article-footer"><a href="{{ post.url }}">阅读全文 →</a></footer>
-  </article>
-  {% endfor %}
+<div id="main">
+  <ul id="links">
+    <li><a href="https://github.com/weizhenye" target="_blank"><span data-before="https://" data-after=".com/">GitHub</span></a></li>
+    <li><a href="https://twitter.com/weizhenye" target="_blank"><span data-before="https://" data-after=".com/">Twitter</span></a></li>
+    <li><a href="https://telegram.me/weizhenye" target="_blank"><span data-before="https://" data-after=".me/">Telegram</span></a></li>
+    <li><a href="https://about.me/weizhenye" target="_blank"><span data-before="https://" data-after="/">about.me</span></a></li>
+    <li><a href="https://v2ex.com/member/weizhenye" target="_blank"><span data-before="https://" data-after=".com/member/">V2EX</span></a></li>
+    <li><a href="https://bgm.tv/user/woozy" target="_blank"><span data-before="" data-after=".tv/user/">Bangumi</span></a></li>
+    <li><a href="mailto:weizhenye@gmail.com"><span data-before="@" data-after=".com">Gmail</span></a></li>
+    <li><a href="/articles/"><span data-before=".im/" data-after="/">Articles</span></a></li>
+    <li id="name"><span data-weizhenye="weizhenye" data-woozy="woozy"></span></li>
+  </ul>
 </div>

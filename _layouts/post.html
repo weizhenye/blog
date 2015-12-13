@@ -1,10 +1,14 @@
 ---
 layout: default
 ---
-<article class="article">
+{% include nav.html %}
+<article class="container article">
   <header class="article-header">
-    <h2 class="article-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
-    <time class="article-time">{{ page.date | date:"%Y-%m-%d" }}</time>
+    <h1 class="article-title">{{ page.title }}</h1>
+    <div class="article-info float-right">
+      <time datetime="{{ page.date }}">{{ page.date | date:"%Y-%m-%d" }}</time>
+      <div class="article-author">{{ site.author }}</div>
+    </div>
   </header>
   <section class="article-section">
     {{ content }}
@@ -12,14 +16,10 @@ layout: default
   <hr>
   <nav class="article-nav">
     {% if page.previous %}
-    <span class="prev">
-      <a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
-    </span>
+    <a href="{{ page.previous.url }}" class="float-left" title="上一篇">{{ page.previous.title }}</a>
     {% endif %}
     {% if page.next %}
-    <span class="next">
-      <a href="{{ page.next.url }}">{{ page.next.title }} →</a>
-    </span>
+    <a href="{{ page.next.url }}" class="float-right" title="下一篇">{{ page.next.title }}</a>
     {% endif %}
   </nav>
   <hr>

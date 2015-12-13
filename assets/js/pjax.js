@@ -48,15 +48,18 @@ var pjaxCallback = function() {
 pjaxCallback();
 document.addEventListener('click', function(e) {
   var ele = e.target;
-  if (ele &&
-      ele.nodeName === 'A' &&
-      !ele.target &&
-      ele.hostname === location.hostname) {
-    if (!window.history) return;
-    e.preventDefault();
-    pjax(ele.pathname, 1, pjaxCallback);
+  while (ele.parentNode) {
+    if (ele.nodeName === 'A' &&
+        !ele.target &&
+        ele.origin === window.location.origin) {
+      if (!window.history) return;
+      e.preventDefault();
+      pjax(ele.pathname, 1, pjaxCallback);
+    }
+    ele = ele.parentNode;
   }
 });
 window.addEventListener('popstate', function(e) {
   pjax(e.state.url, 0, pjaxCallback);
 });
+window.history.replaceState({url: window.location.pathname}, document.title);

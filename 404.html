@@ -2,37 +2,32 @@
 layout: default
 title: 404
 ---
-<div class="error-404">
-  <canvas width="300" height="300" class="yojouhan-4"></canvas><canvas width="300" height="300" id="yojouhan-0"></canvas><canvas width="300" height="300" class="yojouhan-4"></canvas>
+{% include nav.html %}
+<svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="yojouhan-0" viewBox="0 0 440 440">
+      <rect x="0" y="285" width="285" height="10" fill="#fff"></rect>
+      <rect x="155" y="155" width="285" height="10" fill="#fff"></rect>
+      <rect x="285" y="155" width="10" height="285" fill="#fff"></rect>
+      <rect x="155" y="0" width="10" height="285" fill="#fff"></rect>
+      <rect x="0" y="0" width="440" height="30" fill="#dc0370"></rect>
+      <rect x="0" y="0" width="30" height="440" fill="#dc0370"></rect>
+      <rect x="410" y="0" width="30" height="440" fill="#dc0370"></rect>
+      <rect x="0" y="410" width="440" height="30" fill="#dc0370"></rect>
+    </symbol>
+    <symbol id="yojouhan-4" viewBox="0 0 440 440">
+      <rect x="0" y="285" width="285" height="10" fill="#fff"></rect>
+      <rect x="285" y="0" width="10" height="440" fill="#fff"></rect>
+      <rect x="0" y="0" width="440" height="30" fill="#dc0370"></rect>
+      <rect x="0" y="0" width="30" height="440" fill="#dc0370"></rect>
+      <rect x="410" y="0" width="30" height="440" fill="#dc0370"></rect>
+      <rect x="0" y="410" width="440" height="30" fill="#dc0370"></rect>
+      <rect x="137" y="0" width="30" height="290" fill="#dc0370"></rect>
+      <rect x="273" y="0" width="30" height="165" fill="#dc0370"></rect>
+      <rect x="273" y="140" width="165" height="30" fill="#dc0370"></rect>
+    </symbol>
+  </defs>
+</svg>
+<div class="container">
+  <svg class="yojohan"><use xlink:href="#yojouhan-4"></use></svg><svg class="yojohan"><use xlink:href="#yojouhan-0"></use></svg><svg class="yojohan"><use xlink:href="#yojouhan-4"></use></svg>
 </div>
-<script>
-(function() {
-  var canvas4 = document.getElementsByClassName('yojouhan-4');
-  for (var i = canvas4.length - 1; i >= 0; i--) {
-    var ctx4 = canvas4[i].getContext('2d');
-    ctx4.fillStyle = '#fff';
-    ctx4.fillRect(0, 195, 200, 10);
-    ctx4.fillRect(195, 100, 10, 200);
-    ctx4.fillStyle = '#dc0370';
-    ctx4.fillRect(0, 0, 300, 20);
-    ctx4.fillRect(0, 0, 20, 300);
-    ctx4.fillRect(0, 280, 300, 20);
-    ctx4.fillRect(280, 0, 20, 300);
-    ctx4.fillRect(90, 0, 20, 200);
-    ctx4.fillRect(190, 0, 20, 100);
-    ctx4.fillRect(190, 90, 100, 20);
-  }
-  var canvas0 = document.getElementById('yojouhan-0'),
-      ctx0 = canvas0.getContext('2d');
-  ctx0.fillStyle = '#fff';
-  ctx0.fillRect(95, 0, 10, 200);
-  ctx0.fillRect(195, 100, 10, 200);
-  ctx0.fillRect(0, 195, 200, 10);
-  ctx0.fillRect(100, 95, 200, 10);
-  ctx0.fillStyle = '#dc0370';
-  ctx0.fillRect(0, 0, 300, 20);
-  ctx0.fillRect(0, 0, 20, 300);
-  ctx0.fillRect(0, 280, 300, 20);
-  ctx0.fillRect(280, 0, 20, 300);
-})();
-</script>

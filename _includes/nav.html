@@ -1,0 +1,9 @@
+<nav class="container site-nav">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li>/ <a href="/articles/">Articles</a></li>
+    {% if page.id %}
+    <li>/ <a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endif %}
+  </ul>
+</nav>
