@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="renderer" content="webkit">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="description" content="{% if page.id %}{{ page.content | strip_html | truncate: 150}}{% else %}woozy's personal blog.{% endif %}">
+  <meta name="description" content="{% if page.id %}{{ page.content | strip_html | truncate: 150}}{% else %}{% if page.url == '/articles/' %}A list of articles about web development, otaku and myself.{% else %}Just a personal blog of the woozy men.{% endif %}{% endif %}">
   <meta name="keywords" content="woozy, weizhenye, blog">
   <meta name="author" content="{{ site.author }}"/>
   <title>{{ page.title }}</title>
