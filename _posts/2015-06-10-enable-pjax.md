@@ -1,6 +1,6 @@
 ---
 date: 2015-06-10 20:00:00
-title: 本博客启用 Pjax 遇到的问题
+title: 启用 Pjax 遇到的问题
 layout: post
 tags:
     - 

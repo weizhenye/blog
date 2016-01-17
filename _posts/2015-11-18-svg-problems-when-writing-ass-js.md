@@ -1,6 +1,6 @@
 ---
 date: 2015-11-18 21:30:00
-title: 写 ASS.js 时遇到的 SVG 问题
+title: ASS.js 中的 SVG 问题
 layout: post
 tags:
     - 

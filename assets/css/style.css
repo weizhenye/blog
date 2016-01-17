@@ -11,11 +11,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
+[lang="ja"] {
+  font-family: "minmoji", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans Japanese", "Yu Gothic", YuGothic, "游ゴシック体", Meiryo, "メイリオ", sans-serif;
+}
 body {
   color: #535353;
   background: #d4defe;
   font-size: 16px;
-  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Hiragino Sans GB", Tahoma, Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   margin: 0;
 }
 a,
@@ -68,10 +71,10 @@ q {
   background: #d3eeff;
 }
 q:before {
-  content: '「';
+  content: "『";
 }
 q:after {
-  content: '」';
+  content: "』";
 }
 blockquote {
   color: #6a2a66;
@@ -83,7 +86,7 @@ code {
   color: #fff;
   background: #272822;
   font-size: 12px;
-  font-family: 'source code pro', Monaco, Menlo, 'Courier New', monospace;
+  font-family: "source code pro", Monaco, Menlo, "Courier New", monospace;
   border-radius: 4px;
   word-break: keep-all;
   white-space: nowrap;
@@ -261,7 +264,7 @@ code {
   line-height: 1.5em;
 }
 .article-nav:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -271,10 +274,12 @@ code {
   padding: 16px 8px;
 }
 .article-nav a.float-left:before {
-  content: '← ';
+  content: "← ";
+  font-family: Arial;
 }
 .article-nav a.float-right:after {
-  content: ' →';
+  content: " →";
+  font-family: Arial;
 }
 .list-year {
   font-size: 1.25em;
@@ -283,11 +288,16 @@ code {
   padding: .25em .5em;
 }
 .article-list dd {
-  margin: .5em 3em;
+  margin: .5em 2em;
 }
 @media only screen and (max-width: 768px) {
   .container {
     width: auto;
     margin: 0 1em;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .article-list dd time {
+    display: none;
   }
 }
