@@ -1,6 +1,9 @@
 /* Global */
+::selection {
+  background: #fda8c0;
+}
 ::-webkit-scrollbar {
-  width: .75em;
+  width: .5em;
 }
 ::-webkit-scrollbar-track-piece {
   background: #fff;
