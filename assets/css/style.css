@@ -3,7 +3,8 @@
   background: #fda8c0;
 }
 ::-webkit-scrollbar {
-  width: .5em;
+  width: .5rem;
+  height: .5rem;
 }
 ::-webkit-scrollbar-track-piece {
   background: #fff;
@@ -17,12 +18,15 @@
 [lang="ja"] {
   font-family: "minmoji", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans Japanese", "Yu Gothic", YuGothic, "游ゴシック体", Meiryo, "メイリオ", sans-serif;
 }
+body, ul, ol, p {
+  margin: 0;
+  padding: 0;
+}
 body {
   color: #535353;
   background: #d4defe;
   font-size: 16px;
-  font-family: "Hiragino Sans GB", Tahoma, Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  margin: 0;
+  font-family: "Hiragino Sans GB", "Noto Sans S Chinese", Tahoma, Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 a,
 a:link {
@@ -57,10 +61,8 @@ h6 {
 p {
   font-size: 16px;
   line-height: 1.7em;
-  text-indent: 2em;
   text-align: justify;
   text-justify: ideographic;
-  margin-bottom: 1.7em;
 }
 strong {
   font-weight: bold;
@@ -85,15 +87,38 @@ blockquote {
   margin: 0;
   padding-left: 1em;
 }
+:not(pre) > code {
+  padding: .25rem;
+}
+pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+}
+pre,
+:not(pre) > code {
+  background: #d3eeff;
+  border-radius: .25rem;
+}
+pre,
 code {
-  color: #fff;
-  background: #272822;
-  font-size: 12px;
-  font-family: "source code pro", Monaco, Menlo, "Courier New", monospace;
-  border-radius: 4px;
-  word-break: keep-all;
-  white-space: nowrap;
-  padding: 4px;
+  max-width: 100%;
+  font-size: .75rem;
+  color: #000;
+  font-family: "Source Code Pro", Monaco, Menlo, "Courier New", monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 .mask {
   background: #535353;
@@ -265,6 +290,28 @@ code {
 }
 .article-info {
   line-height: 1.5em;
+}
+.article-section > p {
+  text-indent: 2em;
+  margin: 1em 0 1.7em;
+}
+.article-section > p img {
+  max-width: 100%;
+  margin-left: -2em;
+}
+.article-section ul,
+.article-section ol {
+  padding-left: 2em;
+}
+.article-section > ul,
+.article-section > ol {
+  margin-bottom: 1.7em;
+}
+.article-section ul li,
+.article-section ol li {
+  text-align: justify;
+  text-justify: ideographic;
+  margin: .5em 0;
 }
 .article-nav:after {
   content: "";

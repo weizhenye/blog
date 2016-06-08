@@ -6,10 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="description" content="{% if page.id %}{{ page.content | strip_html | truncate: 150}}{% else %}{% if page.url == '/articles/' %}A list of articles about web development, otaku and myself.{% else %}Just a personal blog of the woozy men.{% endif %}{% endif %}">
-  <meta name="keywords" content="woozy, weizhenye, blog">
+  <meta name="keywords" content="woozy,weizhenye,web,frontend,otaku,blog">
   <meta name="author" content="{{ site.author }}"/>
+  <meta name="theme-color" content="#d4defe">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  {% if page.previous %}<link rel="prev" href="{{ page.previous.url }}">{% endif %}
+  {% if page.next %}<link rel="next" href="{{ page.next.url }}">{% endif %}
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml">
 </head>
 <body>
