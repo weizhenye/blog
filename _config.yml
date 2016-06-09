@@ -6,5 +6,6 @@ domain: woozy.im
 author: Zhenye Wei
 email: weizhenye@gmail.com
 excerpt_separator: <!-- more -->
+timezone: Asia/Shanghai
 googleAnalyticsID: UA-34447075-1
 disqusShortName: muou

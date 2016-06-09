@@ -1,9 +1,10 @@
 ---
-date: 2015-11-18 21:30:00
+date: 2015-11-18 21:30:00 +0800
 title: ASS.js 中的 SVG 问题
 layout: post
 tags:
-    - 
+    - ASS
+    - SVG
 categories:
     - Tech
 published: true

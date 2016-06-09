@@ -1,9 +1,10 @@
 ---
-date: 2013-12-23 01:00:00
+date: 2013-12-23 01:00:00 +0800
 title: 弹幕项目
 layout: post
 tags:
-    - 
+    - 弹幕
+    - 算法
 categories:
     - Idea
     - Tech

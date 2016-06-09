@@ -1,5 +1,5 @@
 ---
-date: 2012-09-06 21:00:00
+date: 2012-09-06 21:00:00 +0800
 title: Go To University
 layout: post
 tags:

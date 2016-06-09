@@ -1,5 +1,5 @@
 ---
-date: 2013-06-10 20:00:00
+date: 2013-06-10 20:00:00 +0800
 title: Hello Alone
 layout: post
 tags:

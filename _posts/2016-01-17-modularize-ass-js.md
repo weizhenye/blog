@@ -1,9 +1,10 @@
 ---
-date: 2016-01-17 01:37:00
+date: 2016-01-17 01:37:00 +0800
 title: ASS.js 模块化笔记
 layout: post
 tags:
-    - 
+    - ASS
+    - 模块化
 categories:
     - Tech
 published: true

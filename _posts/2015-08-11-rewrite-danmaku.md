@@ -1,9 +1,10 @@
 ---
-date: 2015-08-11 02:00:00
+date: 2015-08-11 02:00:00 +0800
 title: 重写了弹幕引擎项目
 layout: post
 tags:
-    - 
+    - 弹幕
+    - 重构
 categories:
     - Idea
     - Tech

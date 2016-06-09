@@ -1,9 +1,9 @@
 ---
-date: 2015-06-10 20:00:00
+date: 2015-06-10 20:00:00 +0800
 title: 启用 Pjax 遇到的问题
 layout: post
 tags:
-    - 
+    - pjax
 categories:
     - Tech
 published: true
