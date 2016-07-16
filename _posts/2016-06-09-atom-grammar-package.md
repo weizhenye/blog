@@ -31,7 +31,7 @@ published: true
 
 由于 language-ass 名称已经被占用了，于是我取名为 language-ssa，ASS 字幕是由 SSA 字幕添加高级特性后发展来的，两者语法基本一致 。其中 `ssa.cson` 就是写语法正则的主文件，后缀 CSON 是个和 JSON 一样的数据交换语言，但它是 CoffeeScript 的子集，看下[该项目](https://github.com/bevry/cson)的 README 基本就会了；`ssa-spec.coffee` 是测试文件，虽然不是必须的，但靠谱的项目都应该有测试；`LICENSE.md` 和  `README.md` 在 Atom 的插件页面会有链接和展示；`package.json` 和普通的 Node.js 项目一样，它的 `engines` 字段多了指定 Atom 的版本，看下[样例](https://github.com/weizhenye/language-ssa/blob/master/package.json)就清楚了。
 
-在本地开发测试时，直接把 language-ssa 文件夹放到 `~/.atom/packages/` 目录下并重载（`Ctrl+Alt+R`） Atom 后就会生效了。
+在本地开发测试时，直接把 language-ssa 文件夹放到 `~/.atom/packages/` 目录下并重载（<kbd>Ctrl+Alt+R</kbd>） Atom 后就会生效了。
 
 ##### 语法规则
 
@@ -44,7 +44,7 @@ Atom 语法文件的各个字段与 TextMate 编辑器的语法文件相同，Te
 * `foldingStartMarker` 和 `foldingStopMarker` 字段，都是正则，匹配到的位置会有一个折叠标记，可以将代码块折叠。但是我在测试时发现 Atom 会自动根据缩进来产生折叠标记，这两个字段是如何影响的还不太清楚。
 * `patterns` 字段，是一个数组，这里是写语法正则的地方，里面是若干个 pattern 对象，姑且称之为「规则」，其中可以包含以下字段：
   + `comment` 字段，注释，无实际效果，描述该「规则」。
-  + `name` 字段，是由若干个 `.` 分隔的字符串，这些名称将作为被匹配部分的 class 名。假如其值为 `comment.line.character.semicolon.ssa`，被匹配到的文本是 `; 分号注释`，那么可以按下 `Ctrl+Alt+I` 打开 DevTools，查看到对应生成的 HTML 为 `<span class="comment line character semicolon ssa">; 分号注释</span>`。
+  + `name` 字段，是由若干个 `.` 分隔的字符串，这些名称将作为被匹配部分的 class 名。假如其值为 `comment.line.character.semicolon.ssa`，被匹配到的文本是 `; 分号注释`，那么可以按下 <kbd>Ctrl+Alt+I</kbd> 打开 DevTools，查看到对应生成的 HTML 为 `<span class="comment line character semicolon ssa">; 分号注释</span>`。
 
     代码高亮的颜色效果是由 Theme 决定的，Theme 事实上就是根据这些 class 来添加颜色。后面会提到一些约定俗成的 class 名。
   + `match` 字段，是一条正则，被它匹配到的文本将被加上 `name` 字段的 class。它只能匹配单行文本，并且只匹配一次。

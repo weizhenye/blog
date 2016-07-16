@@ -16,7 +16,7 @@
   background: #999;
 }
 [lang="ja"] {
-  font-family: "minmoji", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans Japanese", "Yu Gothic", YuGothic, "游ゴシック体", Meiryo, "メイリオ", sans-serif;
+  font-family: "minmoji", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans CJK JP", "Yu Gothic", YuGothic, "游ゴシック体", Meiryo, "メイリオ", sans-serif;
 }
 body, ul, ol, p {
   margin: 0;
@@ -26,7 +26,7 @@ body {
   color: #535353;
   background: #d4defe;
   font-size: 16px;
-  font-family: "Hiragino Sans GB", "Noto Sans S Chinese", Tahoma, Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Hiragino Sans GB", "Noto Sans", "Noto Sans CJK SC", Tahoma, Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 a,
 a:link {
@@ -103,9 +103,6 @@ pre,
 pre,
 code {
   max-width: 100%;
-  font-size: .75rem;
-  color: #000;
-  font-family: "Source Code Pro", Monaco, Menlo, "Courier New", monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -119,6 +116,21 @@ code {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+}
+pre,
+code,
+kbd {
+  color: #000;
+  font-size: .75rem;
+  font-family: "Source Code Pro", Monaco, Menlo, "Courier New", monospace;
+}
+kbd {
+  padding: .125rem .25rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  border-radius: .25rem;
+  box-shadow: inset 0 -1px 0 #bbb;
 }
 .mask {
   background: #535353;
