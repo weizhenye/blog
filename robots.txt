@@ -10,4 +10,4 @@ Disallow: /
 User-agent: baiduspider
 Disallow: /
 
-Sitemap: http://woozy.im/sitemap.xml
+Sitemap: https://woozy.im/sitemap.xml

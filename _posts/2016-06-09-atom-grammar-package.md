@@ -63,7 +63,9 @@ Atom 语法文件的各个字段与 TextMate 编辑器的语法文件相同，Te
 
 ##### 正则用法
 
-上面提到的语法正则与 JavaScript 中的 RegExp 对象用法基本一致，不过还是有一些差异的。就正则本身来说，ES5 和 ES6 还不支持 look-behind，不能使用 `(?<=exp)` 和 `(?<!exp)`，语法正则也一样；但是语法正则都要写成字符串的形式，所以要对特殊符号进行转义，例如匹配一个数字，要写成 `\\d`。
+上面提到的语法正则与 JavaScript 中的 RegExp 对象用法基本一致，不过还是有一些差异的。~~就正则本身来说，ES5 和 ES6 还不支持 lookbehind，不能使用 `(?<=exp)` 和 `(?<!exp)`，语法正则也一样；~~但是语法正则都要写成字符串的形式，所以要对特殊符号进行转义，例如匹配一个数字，要写成 `\\d`。
+
+**Update：在 Atom 中，正则解析使用的是 [oniguruma](https://github.com/atom/node-oniguruma) 引擎，并不是使用 JavaScript 的正则，oniguruma 是支持 lookbehind 的，完整的语法看[这份文档](https://github.com/kkos/oniguruma/blob/master/doc/RE)。**
 
 而写成字符串后就无法像原生正则那样加修饰符了，在 TextMate 找到[正则的文档](https://manual.macromates.com/en/regular_expressions)，发现可以通过 `(?imx-imx)` 和 `(?imx-imx:subexp)` 的方式开启或关闭对应的修饰符。例如 `(?i)abc(?-i)def`，`(?i)` 表示它之后的匹配忽略大小写，`(?-i)` 表示取消忽略大小写，也就是该正则里 `abc` 可以大小写，`def` 必须小写。这种写法是对修饰符的后面起作用，还可以写成 `(?i:abc)def` 这样的形式，只对 `abc` 这个局部起作用。`(?m)` 表示支持匹配多行，虽然 TextMate 的文档是这么说，但是我测试发现在 Atom 中是无效的，对于单条正则来说是没办法匹配多行的，要想匹配多行只能使用 `begin` 和 `end` 的方式。`(?x)` 则可以忽略正则中的空白字符直接量（空格、Tab、换行），而有反斜杠转义的空白字符则不会被忽略，这样当正则过长时就可以换行书写了，也可以给正则的某一部分加上注释，详细的介绍可以看下[这篇文章](http://www.regular-expressions.info/freespacing.html)。如果有多个修饰符可以写到一起，例如 `(?ix)abc`。RegExp 对象中的 g 修饰符是不支持的，语法正则每次只匹配一次。
 
