@@ -1,13 +1,4 @@
-User-agent: 360Spider
-Disallow: /
-
-User-agent: HaosouSpider
-Disallow: /
-
-User-agent: Baiduspider
-Disallow: /
-
-User-agent: baiduspider
-Disallow: /
+User-agent: *
+Allow: /
 
 Sitemap: https://woozy.im/sitemap.xml
