@@ -20,14 +20,16 @@ published: true
 
 那么语法高亮插件该怎么写呢？[官方文档](http://flight-manual.atom.io/hacking-atom/sections/package-word-count/)有讲到如何创建一个普通的插件，而对于语法高亮插件，最快的熟悉方法是查看已有的插件，例如 Atom 官方维护的 [language-json](https://github.com/atom/language-json)。语法高亮插件一般有如下目录结构（其中 `ssa` 为语言名称）：
 
-    language-ssa
-    ├── grammars
-    │   └── ssa.cson
-    ├── spec
-    │   └── ssa-spec.coffee
-    ├── LICENSE.md
-    ├── README.md
-    └── package.json
+```
+language-ssa
+├── grammars
+│   └── ssa.cson
+├── spec
+│   └── ssa-spec.coffee
+├── LICENSE.md
+├── README.md
+└── package.json
+```
 
 由于 language-ass 名称已经被占用了，于是我取名为 language-ssa，ASS 字幕是由 SSA 字幕添加高级特性后发展来的，两者语法基本一致 。其中 `ssa.cson` 就是写语法正则的主文件，后缀 CSON 是个和 JSON 一样的数据交换语言，但它是 CoffeeScript 的子集，看下[该项目](https://github.com/bevry/cson)的 README 基本就会了；`ssa-spec.coffee` 是测试文件，虽然不是必须的，但靠谱的项目都应该有测试；`LICENSE.md` 和  `README.md` 在 Atom 的插件页面会有链接和展示；`package.json` 和普通的 Node.js 项目一样，它的 `engines` 字段多了指定 Atom 的版本，看下[样例](https://github.com/weizhenye/language-ssa/blob/master/package.json)就清楚了。
 
@@ -149,10 +151,12 @@ Atom 插件的持续集成依然可以参考 Atom 官方项目，一般 `.travis
 
 发布插件时首先要检查名称是否可用，一般语法高亮插件都是命名为 `language-语言名` 的。然后需要一个公开的 Git 仓库来放置代码，一般都是开源在 GitHub 上，并在 `package.json` 中写明仓库地址。当第一次 push 到 Git 时，`package.json` 中的 `version` 一般是 `0.0.0`。然后登录 [https://atom.io/account](https://atom.io/account) 获得 API token，在终端输入 `apm login --token YOUR_TOKEN` 就可以准备发布了：
 
-    $ apm publish minor
-    Preparing and tagging a new version done
-    Pushing v0.1.0 tag done
-    Publishing language-ssa@v0.1.0 done
+```bash
+$ apm publish minor
+Preparing and tagging a new version done
+Pushing v0.1.0 tag done
+Publishing language-ssa@v0.1.0 done
+```
 
 运行上述命令后，apm 会自动给 `version` 的次版本加一，然后生成一个 message 为 `Prepare 0.1.0 release` 的 commit，并加上一个 `v0.1.0` 的 Tag，一起 push 到 GitHub 上。之后就可以在 `https://atom.io/packages/language-语言名` 上看到已成功发布了。
 
