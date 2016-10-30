@@ -127,3 +127,8 @@ const c = 3;
 在这个例子中，添加为可变属性就不会影响后面 let 声明了。试了下各个浏览器，Chrome 51 和 Firefox 47 表现一致，给 window 添加不可变属性时会影响到 declarative Environment Record；而 Edge 13 则不会影响。我没有看过 V8 源码，对上述行为我做出如下**猜测**：V8 在使用 Object.defineProperty 给对象添加不可变属性时，直接借用了 const 声明的过程，导致影响到了 declarative Environment Record，是一个 bug。
 
 本人英语不佳，或有理解错误，或有表意不达，还望大家指正。到头来我给出的结论只是个猜测，不过既然浏览器的表现不一致，必然有一方有 bug。如果有人知道确切的原因，还请赐教。
+
+<hr>
+
+**Update**：[和 upsuper 讨论后](https://twitter.com/upsuper/status/792685071815761921 "大白兔大法好")，结论是 Chrome 和 Firefox 是正常的。
+根据[规范](https://tc39.github.io/ecma262/2016/#sec-globaldeclarationinstantiation)，在全局环境中使用 let 和 const 声明变量时，会检查该变量名是否已经被 var、let 或 const 声明过了，如果已声明就报错；还会检查 winodw 中该变量名是否可写，如果该变量不为 undefined 且 configurable 为 false，那么 [HasRestrictedGlobalProperty](https://tc39.github.io/ecma262/2016/#sec-hasrestrictedglobalproperty) 最终会为 true，这样也会报错。
