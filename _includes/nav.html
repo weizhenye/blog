@@ -1,9 +1,14 @@
 <nav class="container site-nav">
   <ul>
     <li><a href="/">Home</a></li>
-    <li>/ <a href="/articles/">Articles</a></li>
-    {% if page.id %}
-    <li>/ <a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% assign page_category = page.url | remove_first: "/" | split:"/" | first %}
+    {% if page_category == 'articles' %}
+    <li><a href="/articles/">Articles</a></li>
+      {% if page.id %}
+      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% else %}
+    <li>404</li>
     {% endif %}
   </ul>
 </nav>

@@ -131,4 +131,4 @@ const c = 3;
 <hr>
 
 **Update**：[和 upsuper 讨论后](https://twitter.com/upsuper/status/792685071815761921 "大白兔大法好")，结论是 Chrome 和 Firefox 是正常的。
-根据[规范](https://tc39.github.io/ecma262/2016/#sec-globaldeclarationinstantiation)，在全局环境中使用 let 和 const 声明变量时，会检查该变量名是否已经被 var、let 或 const 声明过了，如果已声明就报错；还会检查 winodw 中该变量名是否可写，如果该变量不为 undefined 且 configurable 为 false，那么 [HasRestrictedGlobalProperty](https://tc39.github.io/ecma262/2016/#sec-hasrestrictedglobalproperty) 最终会为 true，这样也会报错。
+根据[规范](https://tc39.github.io/ecma262/2016/#sec-globaldeclarationinstantiation)，在全局环境中使用 let 和 const 声明变量时，会检查该变量名是否已经被 var、let 或 const 声明过了，如果已声明就报错；还会检查 window 中该变量名是否可写，如果该变量不为 undefined 且 configurable 为 false，那么 [HasRestrictedGlobalProperty](https://tc39.github.io/ecma262/2016/#sec-hasrestrictedglobalproperty) 最终会为 true，这样也会报错。
