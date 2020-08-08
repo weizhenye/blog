@@ -150,10 +150,10 @@ kbd {
   width: 880px;
   font-size: 1.5em;
   line-height: 32px;
-  margin: -116px 0 0 -440px;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 #links {
   width: 360px;
@@ -200,18 +200,18 @@ kbd {
   max-width: 200px;
   transition: all .5s ease-in .25s;
 }
-#links li:nth-child(7),
-#links li:nth-child(8) {
+#links li:nth-child(5),
+#links li:nth-child(6) {
   width: 100%;
   text-align: left;
   margin: 0;
   position: absolute;
   left: 520px;
 }
-#links li:nth-child(7) {
+#links li:nth-child(5) {
   top: 0;
 }
-#links li:nth-child(8) {
+#links li:nth-child(6) {
   bottom: 0;
 }
 #name {
@@ -221,11 +221,11 @@ kbd {
   position: absolute;
   top: 0;
   left: 360px;
-  transform: translateY(100px);
+  transform: translateY(60px);
   transition: all .25s ease-out .25s;
 }
 #links li:nth-child(1):hover ~ #name,
-#links li:nth-child(7):hover ~ #name {
+#links li:nth-child(5):hover ~ #name {
   transform: translateY(0);
 }
 #links li:nth-child(2):hover ~ #name {
@@ -234,15 +234,9 @@ kbd {
 #links li:nth-child(3):hover ~ #name {
   transform: translateY(80px);
 }
-#links li:nth-child(4):hover ~ #name {
+#links li:nth-child(4):hover ~ #name,
+#links li:nth-child(6):hover ~ #name {
   transform: translateY(120px);
-}
-#links li:nth-child(5):hover ~ #name {
-  transform: translateY(160px);
-}
-#links li:nth-child(6):hover ~ #name,
-#links li:nth-child(8):hover ~ #name {
-  transform: translateY(200px);
 }
 #name span:before,
 #name span:after {
@@ -264,12 +258,12 @@ kbd {
 #links li:hover ~ #name span:after {
   background: #fff298;
 }
-#links li:nth-child(6):hover ~ #name span:before,
-#links li:nth-child(8):hover ~ #name span:before {
+#links li:nth-child(4):hover ~ #name span:before,
+#links li:nth-child(6):hover ~ #name span:before {
   transform: rotateX(180deg);
 }
-#links li:nth-child(6):hover ~ #name span:after,
-#links li:nth-child(8):hover ~ #name span:after {
+#links li:nth-child(4):hover ~ #name span:after,
+#links li:nth-child(6):hover ~ #name span:after {
   transform: rotateX(0);
 }
 
